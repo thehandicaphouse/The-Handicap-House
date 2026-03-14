@@ -43,19 +43,34 @@ flex-direction:column;
 min-height:100vh;
 }
 
-/* CINTA SUPERIOR */
+/* ========================= */
+/* CINTA SUPERIOR ANIMADA */
+/* ========================= */
 
 .header-top{
 background:#1a0826;
-text-align:center;
-padding:8px;
-font-size:14px;
-font-weight:bold;
-letter-spacing:1px;
+overflow:hidden;
 white-space:nowrap;
+padding:8px 0;
 }
 
+.ticker{
+display:inline-block;
+padding-left:100%;
+animation:ticker 18s linear infinite;
+font-weight:bold;
+font-size:14px;
+letter-spacing:1px;
+}
+
+@keyframes ticker{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* ========================= */
 /* HEADER */
+/* ========================= */
 
 header{
 background:#2b0c3f;
@@ -65,6 +80,8 @@ align-items:center;
 padding:20px 40px;
 }
 
+/* LOGO */
+
 .logo{
 justify-self:start;
 }
@@ -73,7 +90,7 @@ justify-self:start;
 height:150px;
 }
 
-/* TEXTO CENTRAL */
+/* SLOGAN */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -97,7 +114,9 @@ border:none;
 border-radius:6px;
 }
 
+/* ========================= */
 /* MENU */
+/* ========================= */
 
 .menu{
 display:flex;
@@ -121,7 +140,9 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
+/* ========================= */
 /* CONTENIDO */
+/* ========================= */
 
 main{
 flex:1;
@@ -169,7 +190,6 @@ background:rgba(0,0,0,0.25);
 .deporte span{
 position:relative;
 z-index:2;
-
 text-shadow:
 -2px -2px 0 #000,
 2px -2px 0 #000,
@@ -182,7 +202,9 @@ text-shadow:
 transform:scale(1.05);
 }
 
+/* ========================= */
 /* REDES */
+/* ========================= */
 
 .redes{
 display:flex;
@@ -215,7 +237,9 @@ transform:scale(1.1);
 .instagram{background:#E4405F;}
 .facebook{background:#1877F2;}
 
+/* ========================= */
 /* FOOTER */
+/* ========================= */
 
 footer{
 text-align:center;
@@ -223,7 +247,9 @@ padding:20px;
 font-size:14px;
 }
 
+/* ========================= */
 /* RESPONSIVE */
+/* ========================= */
 
 @media (max-width:1100px){
 
@@ -233,32 +259,22 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
+/* ========================= */
 /* MOVIL */
+/* ========================= */
 
 @media (max-width:768px){
-
-/* CINTA SUPERIOR AJUSTADA PARA MOVIL */
-
-.header-top{
-font-size:9px;
-letter-spacing:0px;
-padding:5px 2px;
-}
-
-/* HEADER */
 
 header{
 grid-template-columns:1fr;
 text-align:center;
-gap:12px;
-padding:12px 20px;
+gap:15px;
+padding:15px 20px;
 }
+
+/* LOGO CENTRADO */
 
 .logo{
-justify-self:center;
-}
-
-.search{
 justify-self:center;
 }
 
@@ -266,8 +282,17 @@ justify-self:center;
 height:120px;
 }
 
+/* SLOGAN CENTRADO */
+
 .header-center{
 font-size:24px;
+text-align:center;
+}
+
+/* BUSCADOR CENTRADO */
+
+.search{
+justify-self:center;
 }
 
 .search input{
@@ -300,8 +325,12 @@ font-size:28px;
 
 <div class="fondo"></div>
 
+<!-- CINTA SUPERIOR -->
+
 <div class="header-top">
+<div class="ticker">
 ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕
+</div>
 </div>
 
 <header>
