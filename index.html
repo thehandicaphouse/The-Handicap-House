@@ -37,18 +37,12 @@ font-family:Arial, Helvetica, sans-serif;
 color:white;
 }
 
-body{
-display:flex;
-flex-direction:column;
-min-height:100vh;
-}
-
 /* BARRA SUPERIOR */
 
 .header-top{
 background:#1a0826;
 text-align:center;
-padding:10px;
+padding:8px;
 font-size:14px;
 font-weight:bold;
 letter-spacing:1px;
@@ -61,7 +55,7 @@ background:#2b0c3f;
 display:grid;
 grid-template-columns:1fr 1fr 1fr;
 align-items:center;
-padding:20px 40px;
+padding:15px 40px;
 }
 
 .logo{
@@ -69,13 +63,13 @@ justify-self:start;
 }
 
 .logo img{
-height:110px;
+height:100px;
 }
 
 .header-center{
 font-family:'Antonio', sans-serif;
 font-weight:900;
-font-size:32px;
+font-size:30px;
 letter-spacing:2px;
 text-transform:lowercase;
 text-align:center;
@@ -86,8 +80,8 @@ justify-self:end;
 }
 
 .search input{
-padding:10px;
-width:250px;
+padding:8px;
+width:230px;
 border:none;
 border-radius:6px;
 }
@@ -98,13 +92,13 @@ border-radius:6px;
 display:flex;
 justify-content:center;
 gap:12px;
-padding:20px;
+padding:15px;
 }
 
 .menu a{
 background:#ff8c2a;
 color:white;
-padding:10px 18px;
+padding:8px 16px;
 border-radius:10px;
 text-decoration:none;
 font-weight:bold;
@@ -116,23 +110,29 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
+/* CONTENIDO PRINCIPAL */
+
+main{
+max-width:1200px;
+margin:auto;
+}
+
 /* DEPORTES */
 
 .deportes{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-padding:40px;
-flex:1;
+gap:25px;
+padding:20px;
 }
 
 .deporte{
-height:170px;
+height:160px;
 border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:32px;
+font-size:30px;
 font-weight:bold;
 color:white;
 text-decoration:none;
@@ -168,16 +168,19 @@ text-shadow:
 transform:scale(1.05);
 }
 
-/* REDES SOCIALES */
+/* REDES FLOTANTES */
 
-.redes{
+.redes-flotantes{
+position:fixed;
+bottom:60px;
+left:50%;
+transform:translateX(-50%);
 display:flex;
-justify-content:center;
-gap:25px;
-margin-top:20px;
+gap:20px;
+z-index:999;
 }
 
-.redes a{
+.redes-flotantes a{
 width:55px;
 height:55px;
 border-radius:50%;
@@ -188,14 +191,14 @@ box-shadow:0 4px 10px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-.redes img{
-width:28px;
-height:28px;
+.redes-flotantes img{
+width:26px;
+height:26px;
 object-fit:contain;
 }
 
-.redes a:hover{
-transform:scale(1.1);
+.redes-flotantes a:hover{
+transform:scale(1.15);
 }
 
 .whatsapp{
@@ -215,7 +218,7 @@ background:#1877F2;
 footer{
 text-align:center;
 padding:20px;
-margin-top:auto;
+font-size:14px;
 }
 
 /* RESPONSIVE */
@@ -225,7 +228,7 @@ margin-top:auto;
 header{
 grid-template-columns:1fr;
 text-align:center;
-gap:15px;
+gap:12px;
 }
 
 .logo{
@@ -237,16 +240,26 @@ justify-self:center;
 }
 
 .logo img{
-height:120px;
+height:90px;
 }
 
 .header-center{
-font-size:24px;
+font-size:22px;
 }
 
 .search input{
 width:100%;
-max-width:300px;
+max-width:260px;
+}
+
+.deportes{
+padding:15px;
+gap:18px;
+}
+
+.deporte{
+height:140px;
+font-size:24px;
 }
 
 }
@@ -285,6 +298,8 @@ jerseys, jerseys, jerseys, jerseys!
 <a href="contacto.html">Contacto</a>
 </div>
 
+<main>
+
 <section class="deportes">
 
 <a href="futbol.html" class="deporte" style="background-image:url('futbol.png')">
@@ -305,9 +320,11 @@ jerseys, jerseys, jerseys, jerseys!
 
 </section>
 
-<!-- REDES CENTRADAS -->
+</main>
 
-<div class="redes">
+<!-- REDES FLOTANTES -->
+
+<div class="redes-flotantes">
 
 <a class="whatsapp" href="https://wa.me/528132802304" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
@@ -324,7 +341,7 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 
 <footer>
-<p>© 2026 The Handicap House</p>
+© 2026 The Handicap House
 </footer>
 
 </body>
