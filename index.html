@@ -44,7 +44,7 @@ min-height:100vh;
 }
 
 /* ========================= */
-/* CINTA SUPERIOR ANIMADA */
+/* CINTA SUPERIOR TICKER */
 /* ========================= */
 
 .header-top{
@@ -52,20 +52,29 @@ background:#1a0826;
 overflow:hidden;
 white-space:nowrap;
 padding:8px 0;
+position:relative;
+z-index:10;
 }
 
 .ticker{
 display:inline-block;
-padding-left:100%;
-animation:ticker 18s linear infinite;
+animation:ticker 20s linear infinite;
 font-weight:bold;
 font-size:14px;
 letter-spacing:1px;
 }
 
+.ticker span{
+padding-right:120px;
+}
+
 @keyframes ticker{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
 }
 
 /* ========================= */
@@ -90,7 +99,7 @@ justify-self:start;
 height:150px;
 }
 
-/* SLOGAN */
+/* TEXTO CENTRAL */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -190,6 +199,7 @@ background:rgba(0,0,0,0.25);
 .deporte span{
 position:relative;
 z-index:2;
+
 text-shadow:
 -2px -2px 0 #000,
 2px -2px 0 #000,
@@ -268,11 +278,9 @@ grid-template-columns:repeat(2,1fr);
 header{
 grid-template-columns:1fr;
 text-align:center;
-gap:15px;
+gap:12px;
 padding:15px 20px;
 }
-
-/* LOGO CENTRADO */
 
 .logo{
 justify-self:center;
@@ -280,16 +288,12 @@ justify-self:center;
 
 .logo img{
 height:120px;
+margin-top:6px;
 }
-
-/* SLOGAN CENTRADO */
 
 .header-center{
 font-size:24px;
-text-align:center;
 }
-
-/* BUSCADOR CENTRADO */
 
 .search{
 justify-self:center;
@@ -328,9 +332,15 @@ font-size:28px;
 <!-- CINTA SUPERIOR -->
 
 <div class="header-top">
+
 <div class="ticker">
-ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
+
 </div>
+
 </div>
 
 <header>
