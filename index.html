@@ -47,7 +47,7 @@ position:relative;
 height:90px;
 }
 
-/* TEXTO CENTRAL PERFECTAMENTE CENTRADO */
+/* TEXTO CENTRAL */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -55,7 +55,6 @@ font-weight:900;
 font-size:32px;
 letter-spacing:2px;
 text-transform:lowercase;
-
 position:absolute;
 left:50%;
 transform:translateX(-50%);
@@ -80,8 +79,6 @@ flex-wrap:wrap;
 gap:12px;
 padding:20px;
 }
-
-/* BOTONES MENU */
 
 .menu a{
 background:#ff8c2a;
@@ -166,9 +163,30 @@ padding:30px;
 margin-top:40px;
 }
 
+.social{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.social a{
+display:flex;
+align-items:center;
+gap:8px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.social img{
+width:22px;
+}
+
 /* -------- RESPONSIVE MOVIL -------- */
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
 header{
 flex-direction:column;
@@ -192,23 +210,9 @@ width:100%;
 max-width:300px;
 }
 
-.menu{
-padding:15px;
-gap:8px;
-}
-
-.menu a{
-padding:8px 14px;
-font-size:14px;
-}
-
 .catalogo{
 padding:20px;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-}
-
-.section-title{
-font-size:24px;
 }
 
 }
@@ -286,7 +290,25 @@ jerseys, jerseys, jerseys, jerseys!
 <footer>
 
 <p>© 2026 The Handicap House</p>
-<p>WhatsApp | Instagram | Facebook</p>
+
+<div class="social">
+
+<a href="https://wa.me/528132802304" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
++52 8132802304
+</a>
+
+<a href="https://www.instagram.com/thehandicap.house/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+thehandicap.house
+</a>
+
+<a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+The Handicap House
+</a>
+
+</div>
 
 </footer>
 
