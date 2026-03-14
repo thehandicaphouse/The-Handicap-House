@@ -38,8 +38,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:20px 40px;
-gap:20px;
-flex-wrap:wrap;
+position:relative;
 }
 
 /* LOGO */
@@ -48,7 +47,7 @@ flex-wrap:wrap;
 height:90px;
 }
 
-/* TEXTO CENTRAL */
+/* TEXTO CENTRAL PERFECTAMENTE CENTRADO */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -56,6 +55,10 @@ font-weight:900;
 font-size:32px;
 letter-spacing:2px;
 text-transform:lowercase;
+
+position:absolute;
+left:50%;
+transform:translateX(-50%);
 text-align:center;
 }
 
@@ -81,7 +84,6 @@ padding:20px;
 /* BOTONES MENU */
 
 .menu a{
-
 background:#ff8c2a;
 color:white;
 padding:10px 18px;
@@ -89,14 +91,11 @@ border-radius:10px;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-
 }
 
 .menu a:hover{
-
 background:#ffb347;
 transform:scale(1.05);
-
 }
 
 /* TITULOS */
@@ -173,16 +172,19 @@ margin-top:40px;
 
 header{
 flex-direction:column;
-text-align:center;
 padding:20px;
+gap:10px;
+}
+
+.header-center{
+position:static;
+transform:none;
+font-size:24px;
+margin:10px 0;
 }
 
 .logo img{
 height:70px;
-}
-
-.header-center{
-font-size:26px;
 }
 
 .search input{
