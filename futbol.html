@@ -42,6 +42,19 @@ background-image:url("fondofutbol.png");
 background-position:center;
 background-size:cover;
 background-repeat:no-repeat;
+z-index:-2;
+}
+
+/* CAPA OSCURA */
+
+.fondo::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
 z-index:-1;
 }
 
@@ -74,7 +87,7 @@ letter-spacing:1px;
 }
 
 /* ========================= */
-/* HEADER AZUL FUTBOL */
+/* HEADER */
 /* ========================= */
 
 header{
@@ -311,8 +324,6 @@ max-width:260px;
 <body>
 
 <div class="fondo"></div>
-
-<!-- CINTA -->
 
 <div class="top-bar">
 <div class="ticker">
