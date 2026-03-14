@@ -15,8 +15,15 @@
 
 <style>
 
-body{
+/* IMPORTANTE PARA EL BORDE BLANCO */
+
+html, body{
+height:100%;
 margin:0;
+}
+
+body{
+min-height:100vh;
 font-family:Arial, Helvetica, sans-serif;
 background-image:url("fondo.png");
 background-position:center;
@@ -24,6 +31,8 @@ background-size:cover;
 background-repeat:no-repeat;
 background-attachment:scroll;
 color:white;
+display:flex;
+flex-direction:column;
 }
 
 /* BARRA SUPERIOR */
@@ -106,6 +115,12 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
+/* CONTENIDO */
+
+main{
+flex:1;
+}
+
 /* BOTONES DEPORTES */
 
 .deportes{
@@ -160,10 +175,9 @@ transform:scale(1.05);
 /* FOOTER */
 
 footer{
-background:transparent;
 text-align:center;
 padding:30px;
-margin-top:40px;
+margin-top:auto;
 }
 
 .social{
@@ -252,6 +266,8 @@ jerseys, jerseys, jerseys, jerseys!
 <a href="contacto.html">Contacto</a>
 </div>
 
+<main>
+
 <section class="deportes">
 
 <a href="futbol.html" class="deporte" style="background-image:url('futbol.png')">
@@ -271,6 +287,8 @@ jerseys, jerseys, jerseys, jerseys!
 </a>
 
 </section>
+
+</main>
 
 <footer>
 
