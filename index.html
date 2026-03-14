@@ -44,7 +44,7 @@ min-height:100vh;
 }
 
 /* ========================= */
-/* CINTA SUPERIOR TICKER */
+/* CINTA SUPERIOR */
 /* ========================= */
 
 .header-top{
@@ -56,19 +56,26 @@ position:relative;
 z-index:10;
 }
 
+/* CONTENEDOR TICKER */
+
 .ticker{
-display:inline-block;
-animation:ticker 20s linear infinite;
+display:flex;
+width:max-content;
+animation:tickerMove 25s linear infinite;
+}
+
+/* TEXTO */
+
+.ticker span{
+padding-right:120px;
 font-weight:bold;
 font-size:14px;
 letter-spacing:1px;
 }
 
-.ticker span{
-padding-right:120px;
-}
+/* ANIMACION */
 
-@keyframes ticker{
+@keyframes tickerMove{
 0%{
 transform:translateX(0);
 }
@@ -99,7 +106,7 @@ justify-self:start;
 height:150px;
 }
 
-/* TEXTO CENTRAL */
+/* SLOGAN */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -199,7 +206,6 @@ background:rgba(0,0,0,0.25);
 .deporte span{
 position:relative;
 z-index:2;
-
 text-shadow:
 -2px -2px 0 #000,
 2px -2px 0 #000,
@@ -288,7 +294,6 @@ justify-self:center;
 
 .logo img{
 height:120px;
-margin-top:6px;
 }
 
 .header-center{
@@ -334,6 +339,10 @@ font-size:28px;
 <div class="header-top">
 
 <div class="ticker">
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 
 <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 
