@@ -13,7 +13,7 @@
 
 <style>
 
-/* FONDO GLOBAL COMPATIBLE PC + MOVIL */
+/* FONDO GLOBAL */
 
 .fondo{
 position:fixed;
@@ -57,8 +57,6 @@ align-items:center;
 padding:20px 40px;
 }
 
-/* LOGO */
-
 .logo{
 justify-self:start;
 }
@@ -66,8 +64,6 @@ justify-self:start;
 .logo img{
 height:110px;
 }
-
-/* TEXTO CENTRAL */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -77,8 +73,6 @@ letter-spacing:2px;
 text-transform:lowercase;
 text-align:center;
 }
-
-/* BUSCADOR */
 
 .search{
 justify-self:end;
@@ -96,7 +90,6 @@ border-radius:6px;
 .menu{
 display:flex;
 justify-content:center;
-flex-wrap:wrap;
 gap:12px;
 padding:20px;
 }
@@ -174,25 +167,47 @@ text-align:center;
 padding:30px;
 }
 
-.social{
+/* BOTONES FLOTANTES */
+
+.redes-flotantes{
+position:fixed;
+right:20px;
+bottom:20px;
 display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-margin-bottom:15px;
+flex-direction:column;
+gap:12px;
+z-index:999;
 }
 
-.social a{
+.redes-flotantes a{
+width:55px;
+height:55px;
 display:flex;
 align-items:center;
-gap:8px;
-color:white;
-text-decoration:none;
-font-weight:bold;
+justify-content:center;
+border-radius:50%;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+transition:0.3s;
 }
 
-.social img{
-width:22px;
+.redes-flotantes img{
+width:28px;
+}
+
+.redes-flotantes a:hover{
+transform:scale(1.1);
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.instagram{
+background:#E4405F;
+}
+
+.facebook{
+background:#1877F2;
 }
 
 /* RESPONSIVE */
@@ -283,29 +298,26 @@ jerseys, jerseys, jerseys, jerseys!
 </section>
 
 <footer>
+<p>© 2026 The Handicap House</p>
+</footer>
 
-<div class="social">
+<!-- BOTONES FLOTANTES -->
 
-<a href="https://wa.me/528132802304" target="_blank">
+<div class="redes-flotantes">
+
+<a class="whatsapp" href="https://wa.me/528132802304" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-+52 8132802304
 </a>
 
-<a href="https://www.instagram.com/thehandicap.house/" target="_blank">
+<a class="instagram" href="https://www.instagram.com/thehandicap.house/" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-thehandicap.house
 </a>
 
-<a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
+<a class="facebook" href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-The Handicap House
 </a>
 
 </div>
-
-<p>© 2026 The Handicap House</p>
-
-</footer>
 
 </body>
 </html>
