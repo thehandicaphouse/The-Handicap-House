@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 
@@ -19,8 +20,6 @@ background-size:cover;
 color:white;
 }
 
-/* BARRA SUPERIOR */
-
 .header-top{
 background:#1a0826;
 text-align:center;
@@ -29,8 +28,6 @@ font-size:14px;
 font-weight:bold;
 letter-spacing:1px;
 }
-
-/* HEADER */
 
 header{
 background:#2b0c3f;
@@ -63,8 +60,6 @@ border:none;
 border-radius:6px;
 }
 
-/* MENU */
-
 .menu{
 display:flex;
 justify-content:center;
@@ -88,45 +83,53 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
-/* TITULO */
-
 .section-title{
 text-align:center;
 font-size:28px;
 margin:40px 0;
 }
 
-/* DEPORTES */
-
 .deportes{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 padding:40px;
 }
 
 .deporte{
-background:rgba(255,255,255,0.95);
+height:170px;
 border-radius:12px;
-padding:20px;
-text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:bold;
+color:white;
+text-decoration:none;
+background-size:cover;
+background-position:center;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+position:relative;
+overflow:hidden;
 transition:0.3s;
+}
+
+.deporte::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+.deporte span{
+position:relative;
+z-index:2;
 }
 
 .deporte:hover{
 transform:scale(1.05);
 }
-
-/* IMAGENES BOTON */
-
-.deporte img{
-width:160px;
-height:160px;
-object-fit:contain;
-}
-
-/* FOOTER */
 
 footer{
 background:transparent;
@@ -155,8 +158,6 @@ font-weight:bold;
 .social img{
 width:22px;
 }
-
-/* RESPONSIVE */
 
 @media (max-width:768px){
 
@@ -209,34 +210,32 @@ jerseys, jerseys, jerseys, jerseys!
 </header>
 
 <div class="menu">
-
 <a href="#">Inicio</a>
 <a href="#">Liga MX</a>
 <a href="#">Europa</a>
 <a href="#">Selecciones</a>
 <a href="#">Retro</a>
 <a href="#">Contacto</a>
-
 </div>
 
 <h2 class="section-title">Deportes</h2>
 
 <section class="deportes">
 
-<a href="futbol.html" class="deporte">
-<img src="futbol.png">
+<a href="futbol.html" class="deporte" style="background-image:url('futbol.png')">
+<span>FUTBOL</span>
 </a>
 
-<a href="nfl.html" class="deporte">
-<img src="nfl.png">
+<a href="nfl.html" class="deporte" style="background-image:url('nfl.png')">
+<span>NFL</span>
 </a>
 
-<a href="mlb.html" class="deporte">
-<img src="mlb.png">
+<a href="mlb.html" class="deporte" style="background-image:url('mlb.png')">
+<span>MLB</span>
 </a>
 
-<a href="nhl.html" class="deporte">
-<img src="nhl.png">
+<a href="nhl.html" class="deporte" style="background-image:url('nhl.png')">
+<span>NHL</span>
 </a>
 
 </section>
@@ -255,7 +254,7 @@ jerseys, jerseys, jerseys, jerseys!
 thehandicap.house
 </a>
 
-<a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr" target="_blank">
+<a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
 The Handicap House
 </a>
