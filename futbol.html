@@ -29,7 +29,7 @@ min-height:100vh;
 }
 
 /* ========================= */
-/* FONDO FUTBOL */
+/* FONDO */
 /* ========================= */
 
 .fondo{
@@ -45,21 +45,16 @@ background-repeat:no-repeat;
 z-index:-2;
 }
 
-/* CAPA OSCURA */
-
 .fondo::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.35);
-z-index:-1;
 }
 
 /* ========================= */
-/* CINTA SUPERIOR */
+/* CINTA */
 /* ========================= */
 
 .top-bar{
@@ -153,7 +148,7 @@ transform:scale(1.05);
 }
 
 /* ========================= */
-/* TITULO FUTBOL */
+/* TITULO */
 /* ========================= */
 
 .titulo{
@@ -184,6 +179,8 @@ gap:50px;
 text-align:center;
 cursor:pointer;
 transition:.25s;
+text-decoration:none;
+color:white;
 }
 
 .liga:hover{
@@ -325,6 +322,8 @@ max-width:260px;
 
 <div class="fondo"></div>
 
+<!-- CINTA -->
+
 <div class="top-bar">
 <div class="ticker">
 
@@ -361,7 +360,11 @@ FUTBOL
 
 <section class="ligas">
 
-<div class="liga"><img src="ligamx.png"><span>LIGA MX</span></div>
+<a href="ligamx.html" class="liga">
+<img src="ligamx.png">
+<span>LIGA MX</span>
+</a>
+
 <div class="liga"><img src="premier.png"><span>PREMIER LEAGUE</span></div>
 <div class="liga"><img src="laliga.png"><span>LA LIGA</span></div>
 <div class="liga"><img src="seriea.png"><span>SERIE A</span></div>
