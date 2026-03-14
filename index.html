@@ -68,6 +68,8 @@ font-size:14px;
 letter-spacing:1px;
 }
 
+/* ANIMACION PC */
+
 @keyframes ticker{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
@@ -85,8 +87,6 @@ align-items:center;
 padding:20px 40px;
 }
 
-/* LOGO */
-
 .logo{
 justify-self:start;
 }
@@ -94,8 +94,6 @@ justify-self:start;
 .logo img{
 height:150px;
 }
-
-/* SLOGAN */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -105,8 +103,6 @@ letter-spacing:2px;
 text-transform:lowercase;
 text-align:center;
 }
-
-/* BUSCADOR */
 
 .search{
 justify-self:end;
@@ -155,8 +151,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 }
-
-/* DEPORTES */
 
 .deportes{
 display:grid;
@@ -251,7 +245,29 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
+/* ========================= */
+/* MOVIL */
+/* ========================= */
+
 @media (max-width:768px){
+
+/* CINTA MAS RAPIDA Y TEXTO MAS PEQUEÑO */
+
+.ticker-wrapper{
+animation:tickerMobile 14s linear infinite;
+}
+
+.ticker-text{
+font-size:11px;
+padding-right:90px;
+}
+
+/* RECORRIDO COMPLETO */
+
+@keyframes tickerMobile{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
 
 header{
 grid-template-columns:1fr;
@@ -363,15 +379,15 @@ jerseys, jerseys, jerseys, jerseys!
 
 <div class="redes">
 
-<a class="whatsapp" href="https://wa.me/528132802304">
+<a href="https://wa.me/528132802304">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
-<a class="instagram" href="https://www.instagram.com/thehandicap.house/">
+<a href="https://www.instagram.com/thehandicap.house/">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
 
-<a class="facebook" href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
+<a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
 </a>
 
