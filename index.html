@@ -51,18 +51,22 @@ z-index:-1;
 
 .top-bar{
 background:#1a0826;
-width:100%;
 overflow:hidden;
+width:100%;
 }
 
-.ticker-wrapper{
+/* CONTENEDOR */
+
+.ticker{
 display:flex;
-white-space:nowrap;
-animation:ticker 25s linear infinite;
+width:max-content;
+animation:tickerMove 25s linear infinite;
 }
 
-.ticker-text{
-padding-right:140px;
+/* TEXTO */
+
+.ticker span{
+padding-right:120px;
 font-weight:bold;
 font-size:14px;
 letter-spacing:1px;
@@ -70,7 +74,7 @@ letter-spacing:1px;
 
 /* ANIMACION PC */
 
-@keyframes ticker{
+@keyframes tickerMove{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
 }
@@ -175,7 +179,6 @@ background-position:center;
 box-shadow:0 0 15px rgba(0,0,0,0.4);
 position:relative;
 overflow:hidden;
-transition:0.3s;
 }
 
 .deporte::before{
@@ -189,12 +192,6 @@ background:rgba(0,0,0,0.25);
 .deporte span{
 position:relative;
 z-index:2;
-text-shadow:
--2px -2px 0 #000,
-2px -2px 0 #000,
--2px 2px 0 #000,
-2px 2px 0 #000,
-0px 3px 6px rgba(0,0,0,0.8);
 }
 
 /* ========================= */
@@ -215,7 +212,6 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 
 .redes img{
@@ -251,22 +247,24 @@ grid-template-columns:repeat(2,1fr);
 
 @media (max-width:768px){
 
-/* CINTA MAS RAPIDA Y TEXTO MAS PEQUEÑO */
+/* BANDA MAS RAPIDA */
 
-.ticker-wrapper{
-animation:tickerMobile 14s linear infinite;
+.ticker{
+animation:tickerMobile 12s linear infinite;
 }
 
-.ticker-text{
-font-size:11px;
-padding-right:90px;
+/* TEXTO MAS PEQUEÑO */
+
+.ticker span{
+font-size:9px;
+padding-right:80px;
 }
 
-/* RECORRIDO COMPLETO */
+/* ANIMACION MOVIL */
 
 @keyframes tickerMobile{
 0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
+100%{transform:translateX(-50%);}
 }
 
 header{
@@ -321,14 +319,13 @@ font-size:28px;
 <!-- CINTA SUPERIOR -->
 
 <div class="top-bar">
-<div class="ticker-wrapper">
 
-<div class="ticker-text">ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</div>
-<div class="ticker-text">ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</div>
-<div class="ticker-text">ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</div>
-<div class="ticker-text">ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</div>
+<div class="ticker">
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 
 </div>
+
 </div>
 
 <header>
