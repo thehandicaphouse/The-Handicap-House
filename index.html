@@ -13,7 +13,7 @@
 
 <style>
 
-/* FONDO GLOBAL */
+/* FONDO */
 
 .fondo{
 position:fixed;
@@ -30,10 +30,17 @@ z-index:-1;
 
 /* BASE */
 
-body{
+html,body{
 margin:0;
+height:100%;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
+}
+
+body{
+display:flex;
+flex-direction:column;
+min-height:100vh;
 }
 
 /* BARRA SUPERIOR */
@@ -109,13 +116,14 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
-/* BOTONES DEPORTES */
+/* DEPORTES */
 
 .deportes{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 padding:40px;
+flex:1;
 }
 
 .deporte{
@@ -160,41 +168,33 @@ text-shadow:
 transform:scale(1.05);
 }
 
-/* FOOTER */
+/* REDES SOCIALES */
 
-footer{
-text-align:center;
-padding:30px;
-}
-
-/* BOTONES FLOTANTES */
-
-.redes-flotantes{
-position:fixed;
-right:20px;
-bottom:20px;
+.redes{
 display:flex;
-flex-direction:column;
-gap:12px;
-z-index:999;
+justify-content:center;
+gap:25px;
+margin-top:20px;
 }
 
-.redes-flotantes a{
+.redes a{
 width:55px;
 height:55px;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:50%;
 box-shadow:0 4px 10px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-.redes-flotantes img{
+.redes img{
 width:28px;
+height:28px;
+object-fit:contain;
 }
 
-.redes-flotantes a:hover{
+.redes a:hover{
 transform:scale(1.1);
 }
 
@@ -208,6 +208,14 @@ background:#E4405F;
 
 .facebook{
 background:#1877F2;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:auto;
 }
 
 /* RESPONSIVE */
@@ -297,13 +305,9 @@ jerseys, jerseys, jerseys, jerseys!
 
 </section>
 
-<footer>
-<p>© 2026 The Handicap House</p>
-</footer>
+<!-- REDES CENTRADAS -->
 
-<!-- BOTONES FLOTANTES -->
-
-<div class="redes-flotantes">
+<div class="redes">
 
 <a class="whatsapp" href="https://wa.me/528132802304" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
@@ -318,6 +322,10 @@ jerseys, jerseys, jerseys, jerseys!
 </a>
 
 </div>
+
+<footer>
+<p>© 2026 The Handicap House</p>
+</footer>
 
 </body>
 </html>
