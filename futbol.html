@@ -68,6 +68,8 @@ font-size:14px;
 letter-spacing:1px;
 }
 
+/* ANIMACION PC */
+
 @keyframes tickerMove{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
@@ -177,16 +179,12 @@ transition:.25s;
 transform:scale(1.08);
 }
 
-/* LOGOS */
-
 .liga img{
 width:90px;
 height:90px;
 object-fit:contain;
 margin-bottom:10px;
 }
-
-/* NOMBRE LIGA */
 
 .liga span{
 display:block;
@@ -212,6 +210,12 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+transition:.25s;
+}
+
+.redes a:hover{
+transform:scale(1.1);
 }
 
 .whatsapp{background:#25D366;}
@@ -262,6 +266,8 @@ font-size:34px;
 /* ========================= */
 
 @media (max-width:768px){
+
+/* MISMA VELOCIDAD QUE INDEX */
 
 .ticker{
 animation:tickerMobile 18s linear infinite;
@@ -315,17 +321,17 @@ max-width:260px;
 
 <div class="fondo"></div>
 
-<!-- CINTA -->
+<!-- CINTA SUPERIOR (IDENTICA A INDEX) -->
 
 <div class="top-bar">
+
 <div class="ticker">
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-</div>
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
+
 </div>
 
-<!-- HEADER -->
+</div>
 
 <header>
 
