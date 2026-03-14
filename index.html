@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catálogo Jerseys</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f5f5f5;
+}
+
+/* TOP BAR */
+
+.topbar{
+background:#111;
+color:white;
+font-size:14px;
+display:flex;
+justify-content:space-between;
+padding:8px 40px;
+}
+
+.topbar a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+}
+
+/* HEADER */
+
+header{
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 40px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+/* SEARCH */
+
+.search input{
+padding:10px;
+width:300px;
+border:1px solid #ccc;
+}
+
+/* MENU */
+
+.menu{
+background:#000;
+padding:12px;
+text-align:center;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+/* BANNER */
+
+.banner{
+height:350px;
+background:url("banner.jpg") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:40px;
+font-weight:bold;
+}
+
+/* CATEGORY SECTION */
+
+.section-title{
+text-align:center;
+font-size:28px;
+margin:40px 0 20px 0;
+}
+
+/* PRODUCT GRID */
+
+.catalogo{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.producto{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.producto:hover{
+transform:scale(1.05);
+}
+
+.producto img{
+width:100%;
+}
+
+.info{
+padding:15px;
+text-align:center;
+}
+
+.nombre{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.precio{
+color:#27ae60;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.boton{
+display:inline-block;
+background:#25D366;
+color:white;
+padding:10px 15px;
+border-radius:5px;
+text-decoration:none;
+}
+
+/* SEARCH SECTION */
+
+.search-section{
+text-align:center;
+padding:40px;
+background:white;
+}
+
+.search-section input{
+padding:12px;
+width:60%;
+border:1px solid #ccc;
+}
+
+/* SUPPORT */
+
+.support{
+background:#eee;
+padding:40px;
+text-align:center;
+}
+
+.support h3{
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+<div>
+MXN | Español
+</div>
+
+<div>
+<a href="#">Login</a>
+<a href="#">Register</a>
+</div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+TU TIENDA
+</div>
+
+<div class="search">
+<input type="text" placeholder="Buscar productos">
+</div>
+
+<div>
+🛒
+</div>
+
+</header>
+
+<!-- MENU -->
+
+<div class="menu">
+
+<a href="#">Inicio</a>
+<a href="#">Football Kits</a>
+<a href="#">Accessories</a>
+<a href="#">Contacto</a>
+
+</div>
+
+<!-- BANNER -->
+
+<div class="banner">
+Bienvenido a la Tienda
+</div>
+
+<!-- PRODUCT SECTION -->
+
+<h2 class="section-title">Football Kits</h2>
+
+<section class="catalogo">
+
+<div class="producto">
+
+<img src="jersey1.jpg">
+
+<div class="info">
+
+<div class="nombre">Jersey Monterrey</div>
+
+<div class="precio">$700</div>
+
+<a class="boton" href="#">Comprar</a>
+
+</div>
+
+</div>
+
+
+<div class="producto">
+
+<img src="jersey2.jpg">
+
+<div class="info">
+
+<div class="nombre">Jersey Real Madrid</div>
+
+<div class="precio">$700</div>
+
+<a class="boton" href="#">Comprar</a>
+
+</div>
+
+</div>
+
+
+<div class="producto">
+
+<img src="jersey3.jpg">
+
+<div class="info">
+
+<div class="nombre">Jersey Barcelona</div>
+
+<div class="precio">$700</div>
+
+<a class="boton" href="#">Comprar</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SECOND CATEGORY -->
+
+<h2 class="section-title">Accessories</h2>
+
+<section class="catalogo">
+
+<div class="producto">
+
+<img src="accesorio1.jpg">
+
+<div class="info">
+
+<div class="nombre">Espinilleras</div>
+
+<div class="precio">$150</div>
+
+<a class="boton" href="#">Comprar</a>
+
+</div>
+
+</div>
+
+
+<div class="producto">
+
+<img src="accesorio2.jpg">
+
+<div class="info">
+
+<div class="nombre">Guantes de portero</div>
+
+<div class="precio">$300</div>
+
+<a class="boton" href="#">Comprar</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SEARCH PRODUCTS -->
+
+<div class="search-section">
+
+<h2>Buscar productos</h2>
+
+<input type="text" placeholder="Buscar jerseys...">
+
+</div>
+
+<!-- SUPPORT -->
+
+<div class="support">
+
+<h3>Soporte 24/7</h3>
+
+<p>Contáctanos para cualquier duda</p>
+
+<p>correo@tutienda.com</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Tu Tienda</p>
+
+<p>WhatsApp | Instagram | Facebook</p>
+
+</footer>
+
+</body>
+</html>
+
+
+
