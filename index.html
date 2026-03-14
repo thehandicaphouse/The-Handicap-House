@@ -127,7 +127,7 @@ grid-template-columns:repeat(4,1fr);
 gap:40px;
 width:90%;
 max-width:1400px;
-padding-bottom:60px;
+padding-bottom:80px;
 }
 
 .deporte{
@@ -159,6 +159,7 @@ background:rgba(0,0,0,0.25);
 .deporte span{
 position:relative;
 z-index:2;
+
 text-shadow:
 -2px -2px 0 #000,
 2px -2px 0 #000,
@@ -171,21 +172,21 @@ text-shadow:
 transform:scale(1.05);
 }
 
-/* REDES FIJAS */
+/* REDES CENTRADAS FIJAS */
 
 .redes-fijas{
 position:fixed;
-right:20px;
-bottom:90px;
+left:50%;
+transform:translateX(-50%);
+bottom:90px; /* separación del footer */
 display:flex;
-flex-direction:column;
-gap:15px;
+gap:20px;
 z-index:999;
 }
 
 .redes-fijas a{
-width:55px;
-height:55px;
+width:60px;
+height:60px;
 border-radius:50%;
 display:flex;
 align-items:center;
@@ -195,8 +196,8 @@ transition:0.3s;
 }
 
 .redes-fijas img{
-width:26px;
-height:26px;
+width:28px;
+height:28px;
 }
 
 .redes-fijas a:hover{
@@ -253,7 +254,7 @@ align-items:flex-start;
 grid-template-columns:1fr;
 gap:20px;
 padding-top:30px;
-padding-bottom:80px;
+padding-bottom:120px;
 }
 
 .deporte{
@@ -261,7 +262,7 @@ height:170px;
 font-size:28px;
 }
 
-/* mover redes un poco más arriba en móvil */
+/* subir un poco más los botones en móvil */
 
 .redes-fijas{
 bottom:110px;
@@ -327,7 +328,7 @@ jerseys, jerseys, jerseys, jerseys!
 
 </main>
 
-<!-- REDES FIJAS -->
+<!-- REDES FIJAS CENTRADAS -->
 
 <div class="redes-fijas">
 
