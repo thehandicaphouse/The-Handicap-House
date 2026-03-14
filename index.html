@@ -64,13 +64,9 @@ align-items:center;
 padding:20px 40px;
 }
 
-.logo{
-justify-self:start;
-}
+.logo{justify-self:start;}
 
-.logo img{
-height:110px;
-}
+.logo img{height:110px;}
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -81,9 +77,7 @@ text-transform:lowercase;
 text-align:center;
 }
 
-.search{
-justify-self:end;
-}
+.search{justify-self:end;}
 
 .search input{
 padding:10px;
@@ -116,7 +110,7 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
-/* CONTENIDO PRINCIPAL */
+/* CONTENIDO */
 
 main{
 flex:1;
@@ -133,7 +127,7 @@ grid-template-columns:repeat(4,1fr);
 gap:40px;
 width:90%;
 max-width:1400px;
-padding-bottom:120px; /* espacio para redes flotantes */
+padding-bottom:60px;
 }
 
 .deporte{
@@ -165,7 +159,6 @@ background:rgba(0,0,0,0.25);
 .deporte span{
 position:relative;
 z-index:2;
-
 text-shadow:
 -2px -2px 0 #000,
 2px -2px 0 #000,
@@ -178,21 +171,21 @@ text-shadow:
 transform:scale(1.05);
 }
 
-/* REDES FLOTANTES */
+/* REDES FIJAS */
 
-.redes-flotantes{
+.redes-fijas{
 position:fixed;
-bottom:40px;
-left:50%;
-transform:translateX(-50%);
+right:20px;
+bottom:90px;
 display:flex;
-gap:20px;
+flex-direction:column;
+gap:15px;
 z-index:999;
 }
 
-.redes-flotantes a{
-width:60px;
-height:60px;
+.redes-fijas a{
+width:55px;
+height:55px;
 border-radius:50%;
 display:flex;
 align-items:center;
@@ -201,12 +194,12 @@ box-shadow:0 4px 10px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-.redes-flotantes img{
-width:28px;
-height:28px;
+.redes-fijas img{
+width:26px;
+height:26px;
 }
 
-.redes-flotantes a:hover{
+.redes-fijas a:hover{
 transform:scale(1.15);
 }
 
@@ -260,12 +253,18 @@ align-items:flex-start;
 grid-template-columns:1fr;
 gap:20px;
 padding-top:30px;
-padding-bottom:160px;
+padding-bottom:80px;
 }
 
 .deporte{
 height:170px;
 font-size:28px;
+}
+
+/* mover redes un poco más arriba en móvil */
+
+.redes-fijas{
+bottom:110px;
 }
 
 }
@@ -328,9 +327,9 @@ jerseys, jerseys, jerseys, jerseys!
 
 </main>
 
-<!-- REDES FLOTANTES -->
+<!-- REDES FIJAS -->
 
-<div class="redes-flotantes">
+<div class="redes-fijas">
 
 <a class="whatsapp" href="https://wa.me/528132802304" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
