@@ -32,9 +32,15 @@ z-index:-1;
 
 html,body{
 margin:0;
-min-height:100%;
+height:100%;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
+}
+
+body{
+display:flex;
+flex-direction:column;
+min-height:100vh;
 }
 
 /* BARRA SUPERIOR */
@@ -113,8 +119,10 @@ transform:scale(1.05);
 /* CONTENIDO PRINCIPAL */
 
 main{
-max-width:1400px;
-margin:auto;
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 /* DEPORTES */
@@ -122,23 +130,25 @@ margin:auto;
 .deportes{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:35px;
-padding:40px 20px 120px 20px; /* espacio para botones flotantes */
+gap:40px;
+width:90%;
+max-width:1400px;
+padding-bottom:120px; /* espacio para redes flotantes */
 }
 
 .deporte{
-height:200px;
+height:220px;
 border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:34px;
+font-size:36px;
 font-weight:bold;
 color:white;
 text-decoration:none;
 background-size:cover;
 background-position:center;
-box-shadow:0 0 12px rgba(0,0,0,0.4);
+box-shadow:0 0 15px rgba(0,0,0,0.4);
 position:relative;
 overflow:hidden;
 transition:0.3s;
@@ -194,36 +204,27 @@ transition:0.3s;
 .redes-flotantes img{
 width:28px;
 height:28px;
-object-fit:contain;
 }
 
 .redes-flotantes a:hover{
 transform:scale(1.15);
 }
 
-.whatsapp{
-background:#25D366;
-}
-
-.instagram{
-background:#E4405F;
-}
-
-.facebook{
-background:#1877F2;
-}
+.whatsapp{background:#25D366;}
+.instagram{background:#E4405F;}
+.facebook{background:#1877F2;}
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:40px 20px 20px 20px;
+padding:20px;
 font-size:14px;
 }
 
 /* RESPONSIVE */
 
-@media (max-width:1000px){
+@media (max-width:1100px){
 
 .deportes{
 grid-template-columns:repeat(2,1fr);
@@ -239,36 +240,32 @@ text-align:center;
 gap:15px;
 }
 
-.logo{
-justify-self:center;
-}
+.logo{justify-self:center;}
+.search{justify-self:center;}
 
-.search{
-justify-self:center;
-}
+.logo img{height:95px;}
 
-.logo img{
-height:95px;
-}
-
-.header-center{
-font-size:24px;
-}
+.header-center{font-size:24px;}
 
 .search input{
 width:100%;
 max-width:260px;
 }
 
+main{
+align-items:flex-start;
+}
+
 .deportes{
 grid-template-columns:1fr;
 gap:20px;
-padding:30px 20px 160px 20px; /* espacio extra para botones flotantes */
+padding-top:30px;
+padding-bottom:160px;
 }
 
 .deporte{
-height:160px;
-font-size:26px;
+height:170px;
+font-size:28px;
 }
 
 }
