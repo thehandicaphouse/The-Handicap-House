@@ -95,63 +95,40 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
-/* TITULOS */
+/* TITULO */
 
 .section-title{
 text-align:center;
 font-size:28px;
-margin:40px 0 20px 0;
+margin:40px 0;
 }
 
-/* PRODUCTOS */
+/* DEPORTES */
 
-.catalogo{
+.deportes{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+gap:30px;
 padding:40px;
 }
 
-.producto{
+.deporte{
 background:rgba(255,255,255,0.95);
 color:black;
 border-radius:12px;
-overflow:hidden;
+padding:30px;
+text-align:center;
 box-shadow:0 0 10px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
-.producto:hover{
+.deporte:hover{
 transform:scale(1.05);
 }
 
-.producto img{
-width:100%;
-}
-
-.info{
-padding:15px;
-text-align:center;
-}
-
-.nombre{
-font-size:18px;
-margin-bottom:10px;
-}
-
-.precio{
-color:#27ae60;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.boton{
-display:inline-block;
-background:#ff8c2a;
-color:white;
-padding:10px 15px;
-border-radius:8px;
-text-decoration:none;
+.deporte img{
+width:120px;
+margin-top:15px;
 }
 
 /* FOOTER */
@@ -184,7 +161,7 @@ font-weight:bold;
 width:22px;
 }
 
-/* -------- RESPONSIVE MOVIL -------- */
+/* RESPONSIVE */
 
 @media (max-width:768px){
 
@@ -210,11 +187,6 @@ width:100%;
 max-width:300px;
 }
 
-.catalogo{
-padding:20px;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-}
-
 }
 
 </style>
@@ -238,7 +210,7 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 
 <div class="search">
-<input type="text" id="buscador" placeholder="Buscar jerseys...">
+<input type="text" placeholder="Buscar jerseys...">
 </div>
 
 </header>
@@ -254,35 +226,28 @@ jerseys, jerseys, jerseys, jerseys!
 
 </div>
 
-<h2 class="section-title">Jerseys disponibles</h2>
+<h2 class="section-title">Deportes</h2>
 
-<section class="catalogo">
+<section class="deportes">
 
-<div class="producto">
-<img src="jersey1.jpg">
-<div class="info">
-<div class="nombre">Jersey Monterrey</div>
-<div class="precio">$700</div>
-<a class="boton">Comprar</a>
-</div>
+<div class="deporte">
+<h3>FUTBOL</h3>
+<img src="futbol.png">
 </div>
 
-<div class="producto">
-<img src="jersey2.jpg">
-<div class="info">
-<div class="nombre">Jersey Real Madrid</div>
-<div class="precio">$700</div>
-<a class="boton">Comprar</a>
-</div>
+<div class="deporte">
+<h3>NFL</h3>
+<img src="nfl.png">
 </div>
 
-<div class="producto">
-<img src="jersey3.jpg">
-<div class="info">
-<div class="nombre">Jersey Barcelona</div>
-<div class="precio">$700</div>
-<a class="boton">Comprar</a>
+<div class="deporte">
+<h3>MLB</h3>
+<img src="mlb.png">
 </div>
+
+<div class="deporte">
+<h3>NHL</h3>
+<img src="nhl.png">
 </div>
 
 </section>
@@ -311,31 +276,6 @@ The Handicap House
 <p>© 2026 The Handicap House</p>
 
 </footer>
-
-<script>
-
-const buscador = document.getElementById("buscador");
-const productos = document.querySelectorAll(".producto");
-
-buscador.addEventListener("keyup", function(){
-
-let filtro = buscador.value.toLowerCase();
-
-productos.forEach(producto => {
-
-let nombre = producto.querySelector(".nombre").textContent.toLowerCase();
-
-if(nombre.includes(filtro)){
-producto.style.display="block";
-}else{
-producto.style.display="none";
-}
-
-});
-
-});
-
-</script>
 
 </body>
 </html>
