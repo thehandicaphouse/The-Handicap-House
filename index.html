@@ -83,12 +83,6 @@ background:#ffb347;
 transform:scale(1.05);
 }
 
-.section-title{
-text-align:center;
-font-size:28px;
-margin:40px 0;
-}
-
 .deportes{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -102,7 +96,7 @@ border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:28px;
+font-size:32px;
 font-weight:bold;
 color:white;
 text-decoration:none;
@@ -119,12 +113,22 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.35);
+background:rgba(0,0,0,0.25);
 }
 
 .deporte span{
 position:relative;
 z-index:2;
+
+/* CONTORNO NEGRO */
+
+text-shadow:
+-2px -2px 0 #000,
+2px -2px 0 #000,
+-2px 2px 0 #000,
+2px 2px 0 #000,
+0px 3px 6px rgba(0,0,0,0.8);
+
 }
 
 .deporte:hover{
@@ -217,8 +221,6 @@ jerseys, jerseys, jerseys, jerseys!
 <a href="#">Retro</a>
 <a href="#">Contacto</a>
 </div>
-
-<h2 class="section-title">Deportes</h2>
 
 <section class="deportes">
 
