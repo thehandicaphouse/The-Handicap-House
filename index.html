@@ -41,13 +41,9 @@ padding:20px 40px;
 position:relative;
 }
 
-/* LOGO */
-
 .logo img{
 height:110px;
 }
-
-/* TEXTO CENTRAL */
 
 .header-center{
 font-family:'Antonio', sans-serif;
@@ -58,10 +54,7 @@ text-transform:lowercase;
 position:absolute;
 left:50%;
 transform:translateX(-50%);
-text-align:center;
 }
-
-/* BUSCADOR */
 
 .search input{
 padding:10px;
@@ -116,19 +109,18 @@ padding:40px;
 background:rgba(255,255,255,0.95);
 color:black;
 border-radius:12px;
-padding:30px;
+padding:40px;
 text-align:center;
 box-shadow:0 0 10px rgba(0,0,0,0.3);
 transition:0.3s;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
 }
 
 .deporte:hover{
 transform:scale(1.05);
-}
-
-.deporte img{
-width:120px;
-margin-top:15px;
 }
 
 /* FOOTER */
@@ -167,7 +159,6 @@ width:22px;
 
 header{
 flex-direction:column;
-padding:20px;
 gap:10px;
 }
 
@@ -179,7 +170,6 @@ height:130px;
 position:static;
 transform:none;
 font-size:24px;
-margin:10px 0;
 }
 
 .search input{
@@ -230,25 +220,21 @@ jerseys, jerseys, jerseys, jerseys!
 
 <section class="deportes">
 
-<div class="deporte">
-<h3>FUTBOL</h3>
-<img src="futbol.png">
-</div>
+<a href="futbol.html" class="deporte">
+FUTBOL
+</a>
 
-<div class="deporte">
-<h3>NFL</h3>
-<img src="nfl.png">
-</div>
+<a href="nfl.html" class="deporte">
+NFL
+</a>
 
-<div class="deporte">
-<h3>MLB</h3>
-<img src="mlb.png">
-</div>
+<a href="mlb.html" class="deporte">
+MLB
+</a>
 
-<div class="deporte">
-<h3>NHL</h3>
-<img src="nhl.png">
-</div>
+<a href="nhl.html" class="deporte">
+NHL
+</a>
 
 </section>
 
