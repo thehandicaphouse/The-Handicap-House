@@ -31,7 +31,6 @@ overflow-x:hidden;
 
 /* ========================= */
 /* FONDO */
-/* ========================= */
 
 .fondo{
 position:fixed;
@@ -56,7 +55,6 @@ background:rgba(0,0,0,0.35);
 
 /* ========================= */
 /* CINTA */
-/* ========================= */
 
 .top-bar{
 background:#1a0826;
@@ -83,7 +81,6 @@ font-size:14px;
 
 /* ========================= */
 /* HEADER */
-/* ========================= */
 
 header{
 background:#0b2a5a;
@@ -123,7 +120,6 @@ border-radius:6px;
 
 /* ========================= */
 /* MENU SUPERIOR */
-/* ========================= */
 
 .menu{
 display:flex;
@@ -149,7 +145,6 @@ transform:scale(1.05);
 
 /* ========================= */
 /* CONTENEDOR */
-/* ========================= */
 
 .contenedor{
 display:flex;
@@ -163,7 +158,6 @@ align-items:flex-start;
 
 /* ========================= */
 /* MENU LATERAL */
-/* ========================= */
 
 .menu-lateral{
 width:220px;
@@ -200,13 +194,13 @@ transform:scale(1.05);
 
 /* ========================= */
 /* PRODUCTOS */
-/* ========================= */
 
 .productos{
 flex:1;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:30px;
+justify-items:center;
 }
 
 .producto{
@@ -214,6 +208,8 @@ background:rgba(0,0,0,0.5);
 border-radius:12px;
 padding:20px;
 text-align:center;
+width:100%;
+max-width:220px;
 }
 
 .producto img{
@@ -231,7 +227,6 @@ font-weight:bold;
 
 /* ========================= */
 /* REDES */
-/* ========================= */
 
 .redes{
 display:flex;
@@ -259,7 +254,6 @@ width:26px;
 
 /* ========================= */
 /* FOOTER */
-/* ========================= */
 
 footer{
 text-align:center;
@@ -269,7 +263,6 @@ margin-top:40px;
 
 /* ========================= */
 /* RESPONSIVE */
-/* ========================= */
 
 @media (max-width:1000px){
 
@@ -279,9 +272,10 @@ grid-template-columns:repeat(3,1fr);
 
 }
 
-@media (max-width:768px){
+/* ========================= */
+/* MOVIL */
 
-/* CINTA */
+@media (max-width:768px){
 
 .ticker{
 animation:tickerMobile 18s linear infinite;
@@ -296,8 +290,6 @@ padding-right:80px;
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
 }
-
-/* HEADER */
 
 header{
 grid-template-columns:1fr;
@@ -333,19 +325,26 @@ max-width:260px;
 flex-direction:column;
 gap:30px;
 margin-top:40px;
+align-items:center;
 }
 
 /* MENU LATERAL */
 
 .menu-lateral{
 width:100%;
+max-width:350px;
 }
 
 /* PRODUCTOS */
 
 .productos{
 grid-template-columns:repeat(2,1fr);
+justify-content:center;
 gap:20px;
+}
+
+.producto{
+margin:auto;
 }
 
 }
@@ -365,8 +364,6 @@ grid-template-columns:1fr;
 <body>
 
 <div class="fondo"></div>
-
-<!-- CINTA -->
 
 <div class="top-bar">
 <div class="ticker">
@@ -400,8 +397,6 @@ jerseys, jerseys, jerseys, jerseys!
 
 <div class="contenedor">
 
-<!-- MENU LATERAL -->
-
 <div class="menu-lateral">
 
 <h3>MONTERREY</h3>
@@ -409,8 +404,6 @@ jerseys, jerseys, jerseys, jerseys!
 <a href="#">JERSEYS</a> <a href="#">UNIFORMES</a> <a href="#">CHAMARRAS</a>
 
 </div>
-
-<!-- PRODUCTOS -->
 
 <div class="productos">
 
