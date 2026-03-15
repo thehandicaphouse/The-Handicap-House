@@ -26,6 +26,7 @@ body{
 display:flex;
 flex-direction:column;
 min-height:100vh;
+overflow-x:hidden;
 }
 
 /* ========================= */
@@ -169,6 +170,7 @@ width:220px;
 background:rgba(11,42,90,0.9);
 padding:20px;
 border-radius:10px;
+box-sizing:border-box;
 }
 
 .menu-lateral h3{
@@ -203,7 +205,7 @@ transform:scale(1.05);
 .productos{
 flex:1;
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(4,1fr);
 gap:30px;
 }
 
@@ -216,7 +218,7 @@ text-align:center;
 
 .producto img{
 width:100%;
-max-width:200px;
+max-width:180px;
 margin:auto;
 display:block;
 }
@@ -266,8 +268,16 @@ margin-top:40px;
 }
 
 /* ========================= */
-/* MOVIL */
+/* RESPONSIVE */
 /* ========================= */
+
+@media (max-width:1000px){
+
+.productos{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
 
 @media (max-width:768px){
 
@@ -390,6 +400,8 @@ jerseys, jerseys, jerseys, jerseys!
 
 <div class="contenedor">
 
+<!-- MENU LATERAL -->
+
 <div class="menu-lateral">
 
 <h3>MONTERREY</h3>
@@ -397,6 +409,8 @@ jerseys, jerseys, jerseys, jerseys!
 <a href="#">JERSEYS</a> <a href="#">UNIFORMES</a> <a href="#">CHAMARRAS</a>
 
 </div>
+
+<!-- PRODUCTOS -->
 
 <div class="productos">
 
@@ -413,6 +427,11 @@ jerseys, jerseys, jerseys, jerseys!
 <div class="producto">
 <img src="rayados3.png">
 <span>Jersey Monterrey Retro</span>
+</div>
+
+<div class="producto">
+<img src="rayados4.png">
+<span>Jersey Monterrey Especial</span>
 </div>
 
 </div>
