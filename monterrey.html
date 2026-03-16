@@ -1804,7 +1804,11 @@ Comprar por WhatsApp
 
 
 
+
+
+
 <script>
+
 document.addEventListener("DOMContentLoaded",function(){
 
 const botones=document.querySelectorAll(".menu-lateral a");
@@ -1813,28 +1817,30 @@ const buscador=document.getElementById("buscador");
 
 /* FILTROS */
 botones.forEach(function(boton){
-  boton.addEventListener("click",function(e){
-    e.preventDefault();
-    const categoria=this.getAttribute("data-cat");
+boton.addEventListener("click",function(e){
+e.preventDefault();
+const categoria=this.getAttribute("data-cat");
 
-    productos.forEach(function(prod){
-      if(categoria==="TODOS"){
-        prod.style.display="";
-      }else if(prod.getAttribute("data-categoria")===categoria){
-        prod.style.display="";
-      }else{
-        prod.style.display="none";
-      }
-    });
-  });
+productos.forEach(function(prod){
+if(categoria==="TODOS"){
+prod.style.display="";
+}else if(prod.getAttribute("data-categoria")===categoria){
+prod.style.display="";
+}else{
+prod.style.display="none";
+}
+});
+});
 });
 
 /* BUSCADOR */
 if(buscador){
 buscador.addEventListener("keyup",function(){
+
 const texto=this.value.toLowerCase();
 
 productos.forEach(function(prod){
+
 const spans=prod.querySelectorAll("span");
 const id=spans[0].textContent.toLowerCase();
 const nombre=spans[1].textContent.toLowerCase();
@@ -1844,14 +1850,29 @@ prod.style.display="";
 }else{
 prod.style.display="none";
 }
+
 });
+
 });
 }
 
 });
 
+
 /* COMPRA WHATSAPP */
 
+function comprarProducto(btn){
+
+const id=btn.dataset.id;
+const nombre=btn.dataset.nombre;
+let precio=parseFloat(btn.dataset.precio);
+const cat=btn.dataset.cat;
+
+let tallas="";
+
+if(cat==="JERSEYS"){
+tallas="S, M, L, XL, 2XL, 3XL (+$50)";
+}
 else if(cat==="MUJER"){
 tallas="S, M, L, XL, 2XL";
 }
@@ -1865,8 +1886,14 @@ tallas="S, M, L, XL, 2XL";
 let talla=prompt("Selecciona talla disponible:\n"+tallas);
 if(!talla) return;
 
-let extras="";
 let total=precio;
+let extras="";
+
+/* 3XL */
+if(talla.toUpperCase()==="3XL"){
+total+=50;
+extras+="Talla 3XL (+$50)\n";
+}
 
 /* PARCHE SOLO JERSEYS */
 if(cat==="JERSEYS"){
@@ -1893,190 +1920,29 @@ if(!extras) extras="Ninguno";
 let pago=prompt("¿Cómo deseas pagar?\nTransferencia o Efectivo (Monterrey)");
 if(!pago) pago="No especificado";
 
-let mensaje=`Hola, quiero comprar:
-
-ID: ${id}
-Producto: ${nombre}
-Precio base: $${precio}
-Talla: ${talla}
-
-Extras:
-${extras}
-
-Forma de pago:
-${pago}
-
-TOTAL: $${total} MXN
-`;
-
-let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
-window.open(url,"_blank");
-
-}
-
-
-function comprarProducto(btn){
-
-const id = btn.dataset.id;
-const nombre = btn.dataset.nombre;
-let precio = parseFloat(btn.dataset.precio);
-const cat = btn.dataset.cat;
-
-let tallas = "";
-
-if(cat==="JERSEYS"){
-tallas="S, M, L, XL, 2XL, 3XL (+$50)";
-}
-else if(cat==="MUJER"){
-tallas="S, M, L, XL, 2XL";
-}
-else if(cat==="UNIFORMES"){
-tallas="2,3,4,5,6,7,8,9,10,11,12,13 años";
-}
-else if(cat==="CHAMARRAS"){
-tallas="S, M, L, XL, 2XL";
-}
-
-let talla = prompt("Selecciona talla disponible:
-"+tallas);
-if(!talla) return;
-
-let total = precio;
-let extras = "";
-
-/* COSTO EXTRA 3XL */
-if(talla.toUpperCase()==="3XL"){
-total += 50;
-extras += "Talla 3XL (+$50)
-";
-}
-
-/* PARCHE SOLO JERSEYS */
-if(cat==="JERSEYS"){
-let parche = confirm("¿Quieres agregar un parche? (+$25 MXN)");
-if(parche){
-let parcheTexto = prompt("Especifica qué parche quieres.
-Ejemplo: Champions League, Liga MX, Mundial de Clubes");
-extras += "Parche: "+(parcheTexto||"No especificado")+" (+$25)
-";
-total += 25;
-}
-}
-
-/* DORSAL JERSEYS MUJER UNIFORMES */
-if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
-let dorsal = confirm("¿Quieres agregar dorsal? (+$100 MXN)");
-if(dorsal){
-let dorsalTexto = prompt("Escribe el dorsal exactamente como lo quieres.
-Ejemplo: RONALDO 7");
-extras += "Dorsal: "+(dorsalTexto||"No especificado")+" (+$100)
-";
-total += 100;
-}
-}
-
-if(!extras) extras = "Ninguno";
-
-let pago = prompt("¿Cómo deseas pagar?
-Transferencia o Efectivo (Monterrey)");
-if(!pago) pago = "No especificado";
-
 /* ENVIO */
-let envio = confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
-let envioTexto = "";
+let envio=confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
+let envioTexto="";
 
 if(envio){
-let ciudad = prompt("Escribe tu ciudad para calcular el envío
-Ejemplo: Guadalajara");
-envioTexto = "Sí
-Ciudad: " + (ciudad || "No especificada");
+let ciudad=prompt("Escribe tu ciudad para calcular el envío\nEjemplo: Guadalajara");
+envioTexto="Sí - Ciudad: "+(ciudad||"No especificada");
 }else{
-envioTexto = "No (Entrega en Monterrey)";
+envioTexto="No (Entrega en Monterrey)";
 }
 
-let mensaje =
-"Hola, quiero comprar:
-" +
-"ID: " + id + "
-" +
-"Producto: " + nombre + "
-" +
-"Precio base: $" + precio + "
-" +
-"Talla: " + talla + "
-" +
-"Extras:
-" + extras +
-"Forma de pago:
-" + pago + "
-" +
-"Envío:
-" + envioTexto + "
-" +
-"TOTAL: $" + total + " MXN";
+let mensaje=
+"Hola, quiero comprar:\n"+
+"ID: "+id+"\n"+
+"Producto: "+nombre+"\n"+
+"Precio base: $"+precio+"\n"+
+"Talla: "+talla+"\n"+
+"Extras:\n"+extras+
+"Forma de pago: "+pago+"\n"+
+"Envío: "+envioTexto+"\n"+
+"TOTAL: $"+total+" MXN";
 
-let url = "https://wa.me/528132802304?text=" + encodeURIComponent(mensaje);
-window.open(url,"_blank");
-
-}
-else if(cat==="MUJER"){
-tallas="S, M, L, XL, 2XL";
-}
-else if(cat==="UNIFORMES"){
-tallas="2,3,4,5,6,7,8,9,10,11,12,13 años";
-}
-else if(cat==="CHAMARRAS"){
-tallas="S, M, L, XL, 2XL";
-}
-
-let talla = prompt("Selecciona talla disponible:\n"+tallas);
-if(!talla) return;
-
-let total = precio;
-let extras = "";
-
-/* COSTO EXTRA 3XL */
-if(talla.toUpperCase()==="3XL"){
-total += 50;
-extras += "Talla 3XL (+$50)\n";
-}
-
-/* PARCHE SOLO JERSEYS */
-if(cat==="JERSEYS"){
-let parche = confirm("¿Quieres agregar un parche? (+$25 MXN)");
-if(parche){
-let parcheTexto = prompt("Especifica qué parche quieres.\nEjemplo: Champions League, Liga MX, Mundial de Clubes");
-extras += "Parche: "+(parcheTexto||"No especificado")+" (+$25)\n";
-total += 25;
-}
-}
-
-/* DORSAL JERSEYS MUJER UNIFORMES */
-if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
-let dorsal = confirm("¿Quieres agregar dorsal? (+$100 MXN)");
-if(dorsal){
-let dorsalTexto = prompt("Escribe el dorsal exactamente como lo quieres.\nEjemplo: RONALDO 7");
-extras += "Dorsal: "+(dorsalTexto||"No especificado")+" (+$100)\n";
-total += 100;
-}
-}
-
-if(!extras) extras = "Ninguno";
-
-let pago = prompt("¿Cómo deseas pagar?\nTransferencia o Efectivo (Monterrey)");
-if(!pago) pago = "No especificado";
-
-let mensaje = 
-"Hola, quiero comprar:\n" +
-"ID: " + id + "\n" +
-"Producto: " + nombre + "\n" +
-"Precio base: $" + precio + "\n" +
-"Talla: " + talla + "\n" +
-"Extras:\n" + extras +
-"Forma de pago:\n" + pago + "\n" +
-"TOTAL: $" + total + " MXN";
-
-let url = "https://wa.me/528132802304?text=" + encodeURIComponent(mensaje);
+let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
 window.open(url,"_blank");
 
 }
