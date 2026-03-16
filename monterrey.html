@@ -1856,6 +1856,8 @@ prod.style.display="none";
 });
 
 
+
+
 function comprarProducto(btn){
 
 const id = btn.dataset.id;
@@ -1868,6 +1870,154 @@ let tallas = "";
 if(cat==="JERSEYS"){
 tallas="S, M, L, XL, 2XL, 3XL (+$50)";
 }
+else if(cat==="MUJER"){
+tallas="S, M, L, XL, 2XL";
+}
+else if(cat==="UNIFORMES"){
+tallas="2,3,4,5,6,7,8,9,10,11,12,13 años";
+}
+else if(cat==="CHAMARRAS"){
+tallas="S, M, L, XL, 2XL";
+}
+
+let talla = prompt("Selecciona talla disponible:
+"+tallas);
+if(!talla) return;
+
+let extras = "";
+
+/* PARCHE SOLO PARA JERSEYS */
+
+if(cat==="JERSEYS"){
+let parche = confirm("¿Quieres agregar un parche? (+$25 MXN)");
+let parcheTexto = "";
+
+if(parche){
+parcheTexto = prompt("Especifica qué parche quieres.
+Ejemplo: Champions League, Liga MX, Mundial de Clubes");
+extras += "Parche: " + (parcheTexto || "No especificado") + " (+$25)
+";
+}
+}
+
+/* DORSAL PARA JERSEYS, MUJER Y UNIFORMES */
+
+if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
+let dorsal = confirm("¿Quieres agregar dorsal? (+$100 MXN)");
+let dorsalTexto = "";
+
+if(dorsal){
+dorsalTexto = prompt("Escribe el dorsal exactamente como lo quieres.
+Ejemplo: RONALDO 7");
+extras += "Dorsal: " + (dorsalTexto || "No especificado") + " (+$100)
+";
+}
+}
+
+if(!extras){
+extras = "Ninguno";
+}
+
+/* METODO DE PAGO */
+
+let pago = prompt("¿Cómo deseas pagar?
+Escribe: Transferencia o Efectivo (Monterrey)");
+if(!pago) pago = "No especificado";
+
+let mensaje = `Hola, quiero comprar:
+
+ID: ${id}
+Producto: ${nombre}
+Precio base: $${precio}
+Talla: ${talla}
+
+Extras:
+${extras}
+
+Forma de pago:
+${pago}
+`;
+
+let url = "https://wa.me/528132802304?text=" + encodeURIComponent(mensaje);
+
+window.open(url,"_blank");
+
+}
+
+else if(cat==="MUJER"){
+tallas="S, M, L, XL, 2XL";
+}
+else if(cat==="UNIFORMES"){
+tallas="2,3,4,5,6,7,8,9,10,11,12,13 años";
+}
+else if(cat==="CHAMARRAS"){
+tallas="S, M, L, XL, 2XL";
+}
+
+let talla = prompt("Selecciona talla disponible:
+"+tallas);
+if(!talla) return;
+
+let extras = "";
+
+/* PARCHE SOLO PARA JERSEYS */
+
+if(cat==="JERSEYS"){
+let parche = confirm("¿Quieres agregar un parche? (+$25 MXN)");
+let parcheTexto = "";
+
+if(parche){
+parcheTexto = prompt("Especifica qué parche quieres.
+Ejemplo: Champions League, Liga MX, Mundial de Clubes");
+extras += "Parche: " + (parcheTexto || "No especificado") + " (+$25)
+";
+}
+}
+
+/* DORSAL PARA JERSEYS Y MUJER */
+
+if(cat==="JERSEYS" || cat==="MUJER"){
+let dorsal = confirm("¿Quieres agregar dorsal? (+$100 MXN)");
+let dorsalTexto = "";
+
+if(dorsal){
+dorsalTexto = prompt("Escribe el dorsal exactamente como lo quieres.
+Ejemplo: RONALDO 7");
+extras += "Dorsal: " + (dorsalTexto || "No especificado") + " (+$100)
+";
+}
+}
+
+if(!extras){
+extras = "Ninguno";
+}
+
+/* METODO DE PAGO */
+
+let pago = prompt("¿Cómo deseas pagar?
+Escribe: Transferencia o Efectivo (Monterrey)");
+if(!pago) pago = "No especificado";
+
+let mensaje = `Hola, quiero comprar:
+
+ID: ${id}
+Producto: ${nombre}
+Precio base: $${precio}
+Talla: ${talla}
+
+Extras:
+${extras}
+
+Forma de pago:
+${pago}
+`;
+
+let url = "https://wa.me/528132802304?text=" + encodeURIComponent(mensaje);
+
+window.open(url,"_blank");
+
+}
+
 else if(cat==="MUJER"){
 tallas="S, M, L, XL, 2XL";
 }
