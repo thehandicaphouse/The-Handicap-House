@@ -1023,5 +1023,34 @@ jerseys, jerseys, jerseys, jerseys!
 © 2026 The Handicap House
 </footer>
 
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+
+const botones=document.querySelectorAll(".menu-lateral a");
+const productos=document.querySelectorAll(".producto");
+
+botones.forEach(function(boton){
+  boton.addEventListener("click",function(e){
+    e.preventDefault();
+
+    const categoria=this.getAttribute("data-cat");
+
+    productos.forEach(function(prod){
+      if(categoria==="TODOS"){
+        prod.style.display="";
+      }else if(prod.getAttribute("data-categoria")===categoria){
+        prod.style.display="";
+      }else{
+        prod.style.display="none";
+      }
+    });
+
+  });
+});
+
+});
+</script>
+
 </body>
 </html>
