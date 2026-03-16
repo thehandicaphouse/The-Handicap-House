@@ -16,12 +16,6 @@ html,body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
-}
-
-body{
-display:flex;
-flex-direction:column;
-min-height:100vh;
 overflow-x:hidden;
 }
 
@@ -83,10 +77,6 @@ align-items:center;
 padding:20px 40px;
 }
 
-.logo{
-justify-self:start;
-}
-
 .logo img{
 height:150px;
 }
@@ -95,8 +85,6 @@ height:150px;
 font-family:'Antonio', sans-serif;
 font-weight:900;
 font-size:32px;
-letter-spacing:2px;
-text-transform:lowercase;
 text-align:center;
 }
 
@@ -111,7 +99,7 @@ border:none;
 border-radius:6px;
 }
 
-/* MENU SUPERIOR */
+/* MENU */
 
 .menu{
 display:flex;
@@ -127,12 +115,6 @@ padding:10px 18px;
 border-radius:10px;
 text-decoration:none;
 font-weight:bold;
-transition:0.3s;
-}
-
-.menu a:hover{
-background:#ffb347;
-transform:scale(1.05);
 }
 
 /* CONTENEDOR */
@@ -144,7 +126,6 @@ max-width:1400px;
 margin:auto;
 margin-top:60px;
 gap:40px;
-align-items:flex-start;
 }
 
 /* MENU LATERAL */
@@ -154,158 +135,105 @@ width:220px;
 background:rgba(11,42,90,0.9);
 padding:20px;
 border-radius:10px;
-box-sizing:border-box;
 }
 
 .menu-lateral h3{
 font-family:'Antonio', sans-serif;
-margin-bottom:20px;
 font-size:24px;
 text-align:center;
+margin-bottom:20px;
 }
 
-.menu-lateral a{
-display:block;
+.menu-lateral button{
+width:100%;
 padding:12px;
 margin-bottom:10px;
 background:#ff8c2a;
+border:none;
 border-radius:8px;
-text-decoration:none;
 color:white;
 font-weight:bold;
-text-align:center;
-transition:.25s;
+cursor:pointer;
 }
 
-.menu-lateral a:hover{
-background:#ffb347;
-transform:scale(1.05);
-}
-
-/* PRODUCTOS */
+/* GRID PRODUCTOS */
 
 .productos{
 flex:1;
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:30px;
+gap:35px;
 justify-items:center;
 }
 
+/* TARJETA */
+
 .producto{
-background:rgba(0,0,0,0.5);
-border-radius:12px;
-padding:20px;
+background:rgba(0,0,0,0.55);
+border-radius:14px;
+padding:22px;
 text-align:center;
+max-width:230px;
 width:100%;
-max-width:220px;
 }
+
+/* IMAGEN */
 
 .producto img{
 width:100%;
-max-width:180px;
+max-width:170px;
 margin:auto;
 display:block;
 }
 
-.producto span{
+/* ID */
+
+.id{
+font-size:11px;
+opacity:.65;
+margin-top:8px;
 display:block;
-margin-top:10px;
-font-weight:bold;
 }
 
-/* REDES */
+/* NOMBRE */
 
-.redes{
-display:flex;
-justify-content:center;
-gap:25px;
-margin-top:80px;
+.nombre{
+font-size:15px;
+font-weight:600;
+margin-top:6px;
+display:block;
 }
 
-.redes a{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
+/* PRECIO */
 
-.whatsapp{background:#25D366;}
-.instagram{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);}
-.facebook{background:#1877F2;}
-
-.redes img{
-width:26px;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-margin-top:40px;
+.precio{
+font-size:18px;
+font-weight:800;
+margin-top:8px;
+display:block;
 }
 
 /* RESPONSIVE */
 
 @media (max-width:1000px){
-
 .productos{
 grid-template-columns:repeat(3,1fr);
 }
-
 }
 
 @media (max-width:768px){
 
-.ticker{
-animation:tickerMobile 18s linear infinite;
-}
-
-.ticker span{
-font-size:9px;
-padding-right:80px;
-}
-
-@keyframes tickerMobile{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
 header{
 grid-template-columns:1fr;
 text-align:center;
-gap:12px;
-padding:18px 20px;
-}
-
-.logo{
-justify-self:center;
 }
 
 .logo img{
 height:120px;
 }
 
-.header-center{
-font-size:24px;
-}
-
-.search{
-justify-self:center;
-}
-
-.search input{
-width:100%;
-max-width:260px;
-}
-
 .contenedor{
 flex-direction:column;
-gap:30px;
-margin-top:40px;
 align-items:center;
 }
 
@@ -316,21 +244,14 @@ max-width:350px;
 
 .productos{
 grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-.producto{
-max-width:280px;
 }
 
 }
 
 @media (max-width:480px){
-
 .productos{
 grid-template-columns:1fr;
 }
-
 }
 
 </style>
@@ -343,9 +264,8 @@ grid-template-columns:1fr;
 
 <div class="top-bar">
 <div class="ticker">
-
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 </div>
 </div>
 
@@ -356,7 +276,7 @@ grid-template-columns:1fr;
 </div>
 
 <div class="header-center">
-jerseys, jerseys, jerseys, jerseys!
+jerseys, jerseys, jerseys!
 </div>
 
 <div class="search">
@@ -377,55 +297,78 @@ jerseys, jerseys, jerseys, jerseys!
 
 <h3>MONTERREY</h3>
 
-<a href="#">JERSEYS</a> <a href="#">MUJER</a> <a href="#">UNIFORMES</a> <a href="#">CHAMARRAS</a>
+<button data-filter="ALL">TODO</button> <button data-filter="JERSEYS">JERSEYS</button> <button data-filter="MUJER">MUJER</button> <button data-filter="UNIFORMES">UNIFORMES</button> <button data-filter="CHAMARRAS">CHAMARRAS</button>
 
 </div>
 
 <div class="productos">
 
-<div class="producto">
-<img src="rayados1.png">
-<span>Jersey Monterrey Local</span>
+<!-- EJEMPLOS DE PRODUCTOS -->
+
+<div class="producto" data-categoria="JERSEYS">
+<img src="monterrey_0708_local.png">
+<span class="id">MTY001</span>
+<span class="nombre">Monterrey 07/08 Local</span>
+<span class="precio">$700</span>
 </div>
 
-<div class="producto">
-<img src="rayados2.png">
-<span>Jersey Monterrey Visitante</span>
+<div class="producto" data-categoria="MUJER">
+<img src="monterrey_mujer_1.png">
+<span class="id">MTY002</span>
+<span class="nombre">Monterrey Mujer Local</span>
+<span class="precio">$700</span>
 </div>
 
-<div class="producto">
-<img src="rayados3.png">
-<span>Jersey Monterrey Retro</span>
+<div class="producto" data-categoria="UNIFORMES">
+<img src="monterrey_uniforme_1.png">
+<span class="id">MTY003</span>
+<span class="nombre">Uniforme Monterrey Niño</span>
+<span class="precio">$900</span>
 </div>
 
-<div class="producto">
-<img src="rayados4.png">
-<span>Jersey Monterrey Especial</span>
+<div class="producto" data-categoria="CHAMARRAS">
+<img src="monterrey_chamarra_1.png">
+<span class="id">MTY004</span>
+<span class="nombre">Chamarra Monterrey Azul</span>
+<span class="precio">$1200</span>
 </div>
 
 </div>
-
-</div>
-
-<div class="redes">
-
-<a class="whatsapp" href="https://wa.me/528132802304">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-
-<a class="instagram" href="https://www.instagram.com/thehandicap.house/">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-
-<a class="facebook" href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
-
 </div>
 
 <footer>
 © 2026 The Handicap House
 </footer>
+
+<script>
+
+const botones = document.querySelectorAll(".menu-lateral button");
+const productos = document.querySelectorAll(".producto");
+
+botones.forEach(boton=>{
+boton.addEventListener("click",()=>{
+
+const filtro = boton.dataset.filter;
+
+productos.forEach(producto=>{
+
+if(filtro === "ALL"){
+producto.style.display="block";
+return;
+}
+
+if(producto.dataset.categoria === filtro){
+producto.style.display="block";
+}else{
+producto.style.display="none";
+}
+
+});
+
+});
+});
+
+</script>
 
 </body>
 </html>
