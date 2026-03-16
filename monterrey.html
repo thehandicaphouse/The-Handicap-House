@@ -1790,7 +1790,72 @@ Comprar por WhatsApp
 
 
 
+
+
+
+
+
+
+
+
 <script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const botones = document.querySelectorAll(".menu-lateral a");
+const productos = document.querySelectorAll(".producto");
+
+botones.forEach(function(boton){
+  boton.addEventListener("click",function(e){
+    e.preventDefault();
+
+    const categoria = this.getAttribute("data-cat");
+
+    productos.forEach(function(prod){
+      if(categoria === "TODOS"){
+        prod.style.display = "";
+      }
+      else if(prod.getAttribute("data-categoria") === categoria){
+        prod.style.display = "";
+      }
+      else{
+        prod.style.display = "none";
+      }
+    });
+
+  });
+});
+
+
+const input = document.getElementById("buscador");
+
+if(input){
+
+input.addEventListener("keyup", function(){
+
+const texto = input.value.toLowerCase();
+
+productos.forEach(function(prod){
+
+const spans = prod.querySelectorAll("span");
+const id = spans[0].textContent.toLowerCase();
+const nombre = spans[1].textContent.toLowerCase();
+
+if(id.includes(texto) || nombre.includes(texto)){
+prod.style.display="";
+}else{
+prod.style.display="none";
+}
+
+});
+
+});
+
+}
+
+});
+
+
 function comprarProducto(btn){
 
 const id = btn.dataset.id;
@@ -1813,36 +1878,31 @@ else if(cat==="CHAMARRAS"){
 tallas="S, M, L, XL, 2XL";
 }
 
-let talla = prompt("Selecciona talla disponible:
-"+tallas);
+let talla = prompt("Selecciona talla disponible:\n"+tallas);
 if(!talla) return;
 
-// PARCHE
 let parche = confirm("¿Quieres agregar un parche? (+$25 MXN)");
 let parcheTexto = "";
+
 if(parche){
-parcheTexto = prompt("Especifica qué parche quieres.
-Ejemplo: Champions League, Liga MX, Mundial de Clubes");
+parcheTexto = prompt("Especifica qué parche quieres.\nEjemplo: Champions League, Liga MX, Mundial de Clubes");
 }
 
-// DORSAL
 let dorsal = confirm("¿Quieres agregar dorsal? (+$100 MXN)");
 let dorsalTexto = "";
+
 if(dorsal){
-dorsalTexto = prompt("Escribe el dorsal exactamente como lo quieres.
-Ejemplo: RONALDO 7");
+dorsalTexto = prompt("Escribe el dorsal exactamente como lo quieres.\nEjemplo: RONALDO 7");
 }
 
 let extras = "";
 
 if(parche){
-extras += "Parche: " + (parcheTexto || "No especificado") + " (+$25)
-";
+extras += "Parche: " + (parcheTexto || "No especificado") + " (+$25)\n";
 }
 
 if(dorsal){
-extras += "Dorsal: " + (dorsalTexto || "No especificado") + " (+$100)
-";
+extras += "Dorsal: " + (dorsalTexto || "No especificado") + " (+$100)\n";
 }
 
 if(!extras){
@@ -1855,6 +1915,7 @@ ID: ${id}
 Producto: ${nombre}
 Precio base: $${precio}
 Talla: ${talla}
+
 Extras:
 ${extras}
 
@@ -1862,42 +1923,12 @@ Forma de pago:
 Transferencia o efectivo (Monterrey)
 `;
 
-let url = "https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
+let url = "https://wa.me/528132802304?text=" + encodeURIComponent(mensaje);
 
 window.open(url,"_blank");
 
 }
-</script>
 
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-
-const input = document.getElementById("buscador");
-const productos = document.querySelectorAll(".producto");
-
-input.addEventListener("keyup", function(){
-
-const texto = input.value.toLowerCase();
-
-productos.forEach(function(prod){
-
-const id = prod.querySelector("span").textContent.toLowerCase();
-const nombre = prod.querySelectorAll("span")[1].textContent.toLowerCase();
-
-if(id.includes(texto) || nombre.includes(texto)){
-prod.style.display="";
-}else{
-prod.style.display="none";
-}
-
-});
-
-});
-
-});
 </script>
 
 </body>
