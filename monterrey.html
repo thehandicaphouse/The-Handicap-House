@@ -1932,14 +1932,26 @@ envioTexto="No (Entrega en Monterrey)";
 }
 
 let mensaje=
-"Hola, quiero comprar:\n"+
-"ID: "+id+"\n"+
-"Producto: "+nombre+"\n"+
-"Precio base: $"+precio+"\n"+
-"Talla: "+talla+"\n"+
-"Extras:\n"+extras+
-"Forma de pago: "+pago+"\n"+
-"Envío: "+envioTexto+"\n"+
+"Hola, quiero comprar:
+"+
+"ID: "+id+"
+"+
+"Producto: "+nombre+"
+
+"+
+"Precio base: $"+precio+"
+"+
+"Talla: "+talla+"
+
+"+
+"Extras:
+"+extras+"
+"+
+"Forma de pago: "+pago+"
+"+
+"Envío: "+envioTexto+"
+
+"+
 "TOTAL: $"+total+" MXN";
 
 let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
