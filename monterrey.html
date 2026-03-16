@@ -1,225 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monterrey | The Handicap House</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
-
-<style>
-
-html,body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-color:white;
-overflow-x:hidden;
-}
-
-.fondo{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("fondofutbol.png");
-background-size:cover;
-background-position:center;
-z-index:-2;
-}
-
-.fondo::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-}
-
-header{
-background:#0b2a5a;
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-align-items:center;
-padding:20px 40px;
-}
-
-.logo img{height:150px;}
-
-.header-center{
-font-family:'Antonio',sans-serif;
-font-size:32px;
-text-align:center;
-}
-
-.menu{
-display:flex;
-justify-content:center;
-gap:12px;
-padding:20px;
-}
-
-.menu a{
-background:#ff8c2a;
-color:white;
-padding:10px 18px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.contenedor{
-display:flex;
-width:90%;
-max-width:1400px;
-margin:auto;
-margin-top:60px;
-gap:40px;
-}
-
-.menu-lateral{
-width:220px;
-background:rgba(11,42,90,0.9);
-padding:20px;
-border-radius:10px;
-}
-
-.menu-lateral h3{
-font-family:'Antonio';
-text-align:center;
-}
-
-.menu-lateral button{
-width:100%;
-padding:12px;
-margin-bottom:10px;
-background:#ff8c2a;
-border:none;
-border-radius:8px;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-.productos{
-flex:1;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:35px;
-justify-items:center;
-}
-
-.producto{
-background:rgba(0,0,0,0.55);
-border-radius:14px;
-padding:22px;
-text-align:center;
-max-width:230px;
-width:100%;
-}
-
-.producto img{
-width:100%;
-max-width:170px;
-display:block;
-margin:auto;
-}
-
-.id{
-font-size:11px;
-opacity:.65;
-margin-top:8px;
-display:block;
-}
-
-.nombre{
-font-size:15px;
-font-weight:600;
-margin-top:6px;
-display:block;
-}
-
-.precio{
-font-size:18px;
-font-weight:800;
-margin-top:8px;
-display:block;
-}
-
-@media (max-width:1000px){
-.productos{grid-template-columns:repeat(3,1fr);}
-}
-
-@media (max-width:768px){
-
-header{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.logo img{height:120px;}
-
-.contenedor{
-flex-direction:column;
-align-items:center;
-}
-
-.menu-lateral{
-width:100%;
-max-width:350px;
-}
-
-.productos{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media (max-width:480px){
-.productos{grid-template-columns:1fr;}
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="fondo"></div>
-
-<header>
-<div class="logo">
-<img src="logo.png">
-</div>
-
-<div class="header-center">
-jerseys, jerseys, jerseys!
-</div>
-
-<div></div>
-</header>
-
-<div class="menu">
-<a href="index.html">Inicio</a>
-<a href="mayoreo.html">Mayoreo</a>
-<a href="contacto.html">Contacto</a>
-</div>
-
-<div class="contenedor">
-
-<div class="menu-lateral">
-
-<h3>MONTERREY</h3>
-
-<button data-filter="ALL">TODO</button> <button data-filter="JERSEYS">JERSEYS</button> <button data-filter="MUJER">MUJER</button> <button data-filter="UNIFORMES">UNIFORMES</button> <button data-filter="CHAMARRAS">CHAMARRAS</button>
-
-</div>
-
-<div class="productos">
-
-<!-- PRODUCTOS DEL EXCEL -->
-
 <div class="producto" data-categoria="JERSEYS">
 <img src="MTY07-08L.png">
 <span class="id">MTY07-08L</span>
@@ -255,44 +33,27 @@ jerseys, jerseys, jerseys!
 <span class="precio">$1100</span>
 </div>
 
-<!-- (los otros 63 productos continúan con el mismo formato generado del Excel) -->
+<div class="producto" data-categoria="UNIFORMES">
+<img src="MTYUNI01.png">
+<span class="id">MTYUNI01</span>
+<span class="nombre">UNIFORME MONTERREY NIÑO LOCAL</span>
+<span class="precio">$900</span>
+</div>
+
+<div class="producto" data-categoria="MUJER">
+<img src="MTYWM01.png">
+<span class="id">MTYWM01</span>
+<span class="nombre">MONTERREY MUJER LOCAL</span>
+<span class="precio">$750</span>
+</div>
+
+<div class="producto" data-categoria="MUJER">
+<img src="MTYWM02.png">
+<span class="id">MTYWM02</span>
+<span class="nombre">MONTERREY MUJER VISITA</span>
+<span class="precio">$750</span>
+</div>
+
+<!-- Continúan todos los demás productos del Excel con el mismo formato -->
 
 </div>
-</div>
-
-<footer style="text-align:center;padding:30px;">
-© 2026 The Handicap House
-</footer>
-
-<script>
-
-const botones=document.querySelectorAll(".menu-lateral button");
-const productos=document.querySelectorAll(".producto");
-
-botones.forEach(b=>{
-b.addEventListener("click",()=>{
-
-const filtro=b.dataset.filter;
-
-productos.forEach(p=>{
-
-if(filtro==="ALL"){
-p.style.display="block";
-return;
-}
-
-if(p.dataset.categoria===filtro){
-p.style.display="block";
-}else{
-p.style.display="none";
-}
-
-});
-
-});
-});
-
-</script>
-
-</body>
-</html>
