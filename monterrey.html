@@ -1807,8 +1807,10 @@ Comprar por WhatsApp
 
 
 
-<script>
 
+
+
+<script>
 document.addEventListener("DOMContentLoaded",function(){
 
 const botones=document.querySelectorAll(".menu-lateral a");
@@ -1857,7 +1859,6 @@ prod.style.display="none";
 }
 
 });
-
 
 /* COMPRA WHATSAPP */
 
@@ -1932,33 +1933,20 @@ envioTexto="No (Entrega en Monterrey)";
 }
 
 let mensaje=
-"Hola, quiero comprar:
-"+
-"ID: "+id+"
-"+
-"Producto: "+nombre+"
-
-"+
-"Precio base: $"+precio+"
-"+
-"Talla: "+talla+"
-
-"+
-"Extras:
-"+extras+"
-"+
-"Forma de pago: "+pago+"
-"+
-"Envío: "+envioTexto+"
-
-"+
+"Hola, quiero comprar:\n"+
+"ID: "+id+"\n"+
+"Producto: "+nombre+"\n\n"+
+"Precio base: $"+precio+"\n"+
+"Talla: "+talla+"\n\n"+
+"Extras:\n"+extras+"\n"+
+"Forma de pago: "+pago+"\n"+
+"Envío: "+envioTexto+"\n\n"+
 "TOTAL: $"+total+" MXN";
 
 let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
 window.open(url,"_blank");
 
 }
-
 </script>
 
 </body>
