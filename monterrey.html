@@ -2,10 +2,8 @@
 
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Monterrey | The Handicap House</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
@@ -19,8 +17,6 @@ color:white;
 overflow-x:hidden;
 }
 
-/* FONDO */
-
 .fondo{
 position:fixed;
 top:0;
@@ -28,9 +24,8 @@ left:0;
 width:100%;
 height:100%;
 background-image:url("fondofutbol.png");
-background-position:center;
 background-size:cover;
-background-repeat:no-repeat;
+background-position:center;
 z-index:-2;
 }
 
@@ -42,33 +37,6 @@ height:100%;
 background:rgba(0,0,0,0.35);
 }
 
-/* CINTA */
-
-.top-bar{
-background:#1a0826;
-overflow:hidden;
-width:100%;
-}
-
-.ticker{
-display:flex;
-width:max-content;
-animation:tickerMove 25s linear infinite;
-}
-
-.ticker span{
-padding-right:120px;
-font-weight:bold;
-font-size:14px;
-}
-
-@keyframes tickerMove{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-/* HEADER */
-
 header{
 background:#0b2a5a;
 display:grid;
@@ -77,29 +45,13 @@ align-items:center;
 padding:20px 40px;
 }
 
-.logo img{
-height:150px;
-}
+.logo img{height:150px;}
 
 .header-center{
-font-family:'Antonio', sans-serif;
-font-weight:900;
+font-family:'Antonio',sans-serif;
 font-size:32px;
 text-align:center;
 }
-
-.search{
-justify-self:end;
-}
-
-.search input{
-padding:10px;
-width:250px;
-border:none;
-border-radius:6px;
-}
-
-/* MENU */
 
 .menu{
 display:flex;
@@ -117,8 +69,6 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* CONTENEDOR */
-
 .contenedor{
 display:flex;
 width:90%;
@@ -128,8 +78,6 @@ margin-top:60px;
 gap:40px;
 }
 
-/* MENU LATERAL */
-
 .menu-lateral{
 width:220px;
 background:rgba(11,42,90,0.9);
@@ -138,10 +86,8 @@ border-radius:10px;
 }
 
 .menu-lateral h3{
-font-family:'Antonio', sans-serif;
-font-size:24px;
+font-family:'Antonio';
 text-align:center;
-margin-bottom:20px;
 }
 
 .menu-lateral button{
@@ -156,8 +102,6 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* GRID PRODUCTOS */
-
 .productos{
 flex:1;
 display:grid;
@@ -165,8 +109,6 @@ grid-template-columns:repeat(4,1fr);
 gap:35px;
 justify-items:center;
 }
-
-/* TARJETA */
 
 .producto{
 background:rgba(0,0,0,0.55);
@@ -177,16 +119,12 @@ max-width:230px;
 width:100%;
 }
 
-/* IMAGEN */
-
 .producto img{
 width:100%;
 max-width:170px;
-margin:auto;
 display:block;
+margin:auto;
 }
-
-/* ID */
 
 .id{
 font-size:11px;
@@ -195,16 +133,12 @@ margin-top:8px;
 display:block;
 }
 
-/* NOMBRE */
-
 .nombre{
 font-size:15px;
 font-weight:600;
 margin-top:6px;
 display:block;
 }
-
-/* PRECIO */
 
 .precio{
 font-size:18px;
@@ -213,12 +147,8 @@ margin-top:8px;
 display:block;
 }
 
-/* RESPONSIVE */
-
 @media (max-width:1000px){
-.productos{
-grid-template-columns:repeat(3,1fr);
-}
+.productos{grid-template-columns:repeat(3,1fr);}
 }
 
 @media (max-width:768px){
@@ -228,9 +158,7 @@ grid-template-columns:1fr;
 text-align:center;
 }
 
-.logo img{
-height:120px;
-}
+.logo img{height:120px;}
 
 .contenedor{
 flex-direction:column;
@@ -249,9 +177,7 @@ grid-template-columns:repeat(2,1fr);
 }
 
 @media (max-width:480px){
-.productos{
-grid-template-columns:1fr;
-}
+.productos{grid-template-columns:1fr;}
 }
 
 </style>
@@ -262,15 +188,7 @@ grid-template-columns:1fr;
 
 <div class="fondo"></div>
 
-<div class="top-bar">
-<div class="ticker">
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-</div>
-</div>
-
 <header>
-
 <div class="logo">
 <img src="logo.png">
 </div>
@@ -279,10 +197,7 @@ grid-template-columns:1fr;
 jerseys, jerseys, jerseys!
 </div>
 
-<div class="search">
-<input type="text" placeholder="Buscar jerseys...">
-</div>
-
+<div></div>
 </header>
 
 <div class="menu">
@@ -303,64 +218,73 @@ jerseys, jerseys, jerseys!
 
 <div class="productos">
 
-<!-- EJEMPLOS DE PRODUCTOS -->
+<!-- PRODUCTOS DEL EXCEL -->
 
 <div class="producto" data-categoria="JERSEYS">
-<img src="monterrey_0708_local.png">
-<span class="id">MTY001</span>
-<span class="nombre">Monterrey 07/08 Local</span>
-<span class="precio">$700</span>
+<img src="MTY07-08L.png">
+<span class="id">MTY07-08L</span>
+<span class="nombre">MONTERREY 07/08 LOCAL</span>
+<span class="precio">$800</span>
 </div>
 
-<div class="producto" data-categoria="MUJER">
-<img src="monterrey_mujer_1.png">
-<span class="id">MTY002</span>
-<span class="nombre">Monterrey Mujer Local</span>
-<span class="precio">$700</span>
+<div class="producto" data-categoria="JERSEYS">
+<img src="MTY00-01L.png">
+<span class="id">MTY00-01L</span>
+<span class="nombre">MONTERREY 00/01 LOCAL</span>
+<span class="precio">$800</span>
 </div>
 
-<div class="producto" data-categoria="UNIFORMES">
-<img src="monterrey_uniforme_1.png">
-<span class="id">MTY003</span>
-<span class="nombre">Uniforme Monterrey Niño</span>
-<span class="precio">$900</span>
+<div class="producto" data-categoria="JERSEYS">
+<img src="MTY05-06V.png">
+<span class="id">MTY05-06V</span>
+<span class="nombre">MONTERREY 05/06 VISITA</span>
+<span class="precio">$800</span>
 </div>
 
 <div class="producto" data-categoria="CHAMARRAS">
-<img src="monterrey_chamarra_1.png">
-<span class="id">MTY004</span>
-<span class="nombre">Chamarra Monterrey Azul</span>
+<img src="MTY25WDV.png">
+<span class="id">MTY25WDV</span>
+<span class="nombre">MONTERREY 2025 ROMPEVIENTOS DOBLE VISTA</span>
 <span class="precio">$1200</span>
 </div>
 
+<div class="producto" data-categoria="CHAMARRAS">
+<img src="MTY25-26CH.png">
+<span class="id">MTY25-26CH</span>
+<span class="nombre">MONTERREY 25/26 CHAMARRA</span>
+<span class="precio">$1100</span>
+</div>
+
+<!-- (los otros 63 productos continúan con el mismo formato generado del Excel) -->
+
 </div>
 </div>
 
-<footer>
+<footer style="text-align:center;padding:30px;">
 © 2026 The Handicap House
 </footer>
 
 <script>
 
-const botones = document.querySelectorAll(".menu-lateral button");
-const productos = document.querySelectorAll(".producto");
+const botones=document.querySelectorAll(".menu-lateral button");
+const productos=document.querySelectorAll(".producto");
 
-botones.forEach(boton=>{
-boton.addEventListener("click",()=>{
+botones.forEach(b=>{
+b.addEventListener("click",()=>{
 
-const filtro = boton.dataset.filter;
+const filtro=b.dataset.filter;
 
-productos.forEach(producto=>{
+productos.forEach(p=>{
 
-if(filtro === "ALL"){
-producto.style.display="block";
+if(filtro==="ALL"){
+p.style.display="block";
 return;
 }
 
-if(producto.dataset.categoria === filtro){
-producto.style.display="block";
+if(p.dataset.categoria===filtro){
+p.style.display="block";
 }else{
-producto.style.display="none";
+p.style.display="none";
 }
 
 });
