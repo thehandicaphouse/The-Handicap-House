@@ -1822,7 +1822,7 @@ Comprar por WhatsApp
 <select id="parcheSelect"></select><br><br>
 </div>
 
-<label>Dorsal:</label>
+<label>Dorsal (+$100):</label>
 <input id="dorsalInput" placeholder="RONALDO 7"><br><br>
 
 <label>Pago:</label>
@@ -1955,14 +1955,16 @@ extras+="Talla 3XL (+$50)\n";
 if(productoActual.cat==="JERSEYS"){
 let p=document.getElementById("parcheSelect").value;
 if(p!=="Ninguno"){
-extras+="Parche: "+p.replace(" (+$25)","")+" (+$25)\n";
+extras+="Parche: "+p.replace(" (+$25)","")+" (+$25)
+";
 total+=25;
 }
 }
 
 let d=document.getElementById("dorsalInput").value;
 if(d){
-extras+="Dorsal: "+d+" (+$100)\n";
+extras+="Dorsal: "+d+" (+$100)
+";
 total+=100;
 }
 
