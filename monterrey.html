@@ -1810,6 +1810,41 @@ Comprar por WhatsApp
 
 
 
+<div id="modalCompra" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:999;justify-content:center;align-items:center;">
+<div style="background:#fff;color:#000;padding:20px;border-radius:10px;width:90%;max-width:320px;">
+<h3>Selecciona opciones</h3>
+
+<label>Talla:</label>
+<select id="tallaSelect"></select><br><br>
+
+<div id="parcheWrap">
+<label>Parche:</label>
+<select id="parcheSelect"></select><br><br>
+</div>
+
+<label>Dorsal (+$100):</label>
+<input id="dorsalInput" placeholder="RONALDO 7"><br><br>
+
+<label>Pago:</label>
+<select id="pagoSelect">
+<option>Transferencia</option>
+<option>Efectivo (Monterrey)</option>
+</select><br><br>
+
+
+<label>Envío:</label>
+<select id="envioSelect">
+<option value="NO">No (Monterrey)</option>
+<option value="SI">Sí (Fuera de Monterrey)</option>
+</select><br><br>
+
+<button onclick="confirmarCompra()">Confirmar</button>
+
+<button onclick="cerrarModal()">Cancelar</button>
+
+</div>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -1818,18 +1853,18 @@ const productos = document.querySelectorAll(".producto");
 const buscador = document.getElementById("buscador");
 
 /* FILTROS */
-botones.forEach(function(boton){
-boton.addEventListener("click", function(e){
+botones.forEach(boton=>{
+boton.addEventListener("click", e=>{
 e.preventDefault();
 const categoria = boton.getAttribute("data-cat");
 
-productos.forEach(function(prod){
-if(categoria === "TODOS"){
-prod.style.display = "";
-}else if(prod.getAttribute("data-categoria") === categoria){
-prod.style.display = "";
+productos.forEach(prod=>{
+if(categoria==="TODOS"){
+prod.style.display="";
+}else if(prod.getAttribute("data-categoria")===categoria){
+prod.style.display="";
 }else{
-prod.style.display = "none";
+prod.style.display="none";
 }
 });
 });
@@ -1837,18 +1872,18 @@ prod.style.display = "none";
 
 /* BUSCADOR */
 if(buscador){
-buscador.addEventListener("input", function(){
-const texto = this.value.toLowerCase();
+buscador.addEventListener("input", ()=>{
+const texto = buscador.value.toLowerCase();
 
-productos.forEach(function(prod){
+productos.forEach(prod=>{
 const spans = prod.querySelectorAll("span");
 const id = spans[0].textContent.toLowerCase();
 const nombre = spans[1].textContent.toLowerCase();
 
-if(id.includes(texto) || nombre.includes(texto)){
-prod.style.display = "";
+if(id.includes(texto)||nombre.includes(texto)){
+prod.style.display="";
 }else{
-prod.style.display = "none";
+prod.style.display="none";
 }
 });
 });
@@ -1856,85 +1891,95 @@ prod.style.display = "none";
 
 });
 
-/* COMPRA */
+/* ===== MODAL ===== */
+
+let productoActual=null;
+
 function comprarProducto(btn){
 
-const id = btn.dataset.id;
-const nombre = btn.dataset.nombre;
-let precio = parseFloat(btn.dataset.precio);
-const cat = btn.dataset.cat;
+productoActual={
+id:btn.dataset.id,
+nombre:btn.dataset.nombre,
+precio:parseFloat(btn.dataset.precio),
+cat:btn.dataset.cat
+};
 
-let total = precio;
-let extras = "";
+let tallas=[];
+if(productoActual.cat==="JERSEYS") tallas=["S","M","L","XL","2XL","3XL (+$50)"];
+if(productoActual.cat==="MUJER") tallas=["S","M","L","XL","2XL"];
+if(productoActual.cat==="UNIFORMES") tallas=["2","4","6","8","10","12","13"];
+if(productoActual.cat==="CHAMARRAS") tallas=["S","M","L","XL","2XL"];
 
-/* TALLA */
-let tallas = [];
-if(cat==="JERSEYS") tallas=["S","M","L","XL","2XL","3XL (+$50)"];
-if(cat==="MUJER") tallas=["S","M","L","XL","2XL"];
-if(cat==="UNIFORMES") tallas=["2","4","6","8","10","12","13"];
-if(cat==="CHAMARRAS") tallas=["S","M","L","XL","2XL"];
+const tSel=document.getElementById("tallaSelect");
+tSel.innerHTML="";
+tallas.forEach(t=>{
+let o=document.createElement("option");
+o.textContent=t;
+tSel.appendChild(o);
+});
 
-let txt="Selecciona talla:\n";
-tallas.forEach((t,i)=> txt+=(i+1)+") "+t+"\n");
+const pWrap=document.getElementById("parcheWrap");
+const pSel=document.getElementById("parcheSelect");
+pSel.innerHTML="";
 
-let i=parseInt(prompt(txt))-1;
-if(isNaN(i) || i<0 || i>=tallas.length) return;
+if(productoActual.cat==="JERSEYS"){
+pWrap.style.display="block";
+["Ninguno","Liga MX (+$25)","Leagues Cup (+$25)","CONCACAF (+$25)","Mundial de Clubes (+$25)"]
+.forEach(p=>{
+let o=document.createElement("option");
+o.textContent=p;
+pSel.appendChild(o);
+});
+}else{
+pWrap.style.display="none";
+}
 
-let talla=tallas[i];
+document.getElementById("modalCompra").style.display="flex";
+}
 
+function cerrarModal(){
+document.getElementById("modalCompra").style.display="none";
+}
+
+function confirmarCompra(){
+
+let total=productoActual.precio;
+let extras="";
+
+let talla=document.getElementById("tallaSelect").value;
 if(talla.includes("3XL")){
 total+=50;
 extras+="Talla 3XL (+$50)\n";
 }
 
-/* PARCHE */
-if(cat==="JERSEYS"){
-let parches=["Ninguno","Liga MX (+$25)","Leagues Cup (+$25)","CONCACAF (+$25)","Mundial de Clubes (+$25)"];
-let txt2="Selecciona parche:\n";
-parches.forEach((p,i)=> txt2+=(i+1)+") "+p+"\n");
-
-let p=parseInt(prompt(txt2))-1;
-
-if(p>0){
-let nombreParche=parches[p].replace(" (+$25)","");
-extras+="Parche: "+nombreParche+" (+$25)\n";
+if(productoActual.cat==="JERSEYS"){
+let p=document.getElementById("parcheSelect").value;
+if(p!=="Ninguno"){
+extras+="Parche: "+p.replace(" (+$25)","")+" (+$25)\n";
 total+=25;
 }
 }
 
-/* DORSAL */
-if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
-if(confirm("¿Agregar dorsal? (+$100)")){
-let d=prompt("Dorsal (+$100)\nEjemplo: RONALDO 7");
+let d=document.getElementById("dorsalInput").value;
 if(d){
 extras+="Dorsal: "+d+" (+$100)\n";
 total+=100;
 }
-}
-}
 
 if(!extras) extras="Ninguno";
 
-/* PAGO */
-let pagos=["Transferencia","Efectivo (Monterrey)"];
-let txt3="Selecciona pago:\n";
-pagos.forEach((p,i)=> txt3+=(i+1)+") "+p+"\n");
+let pago=document.getElementById("pagoSelect").value;
 
-let pi=parseInt(prompt(txt3))-1;
-if(isNaN(pi) || pi<0 || pi>=pagos.length) return;
 
-let pago=pagos[pi];
+let envioSelect = document.getElementById("envioSelect").value;
+let envioTexto = envioSelect==="SI" ? "Sí" : "No (Entrega en Monterrey)";
 
-/* ENVIO */
-let envio=confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
-let envioTexto = envio ? "Sí" : "No (Entrega en Monterrey)";
 
-/* MENSAJE */
-let mensaje =
+let mensaje=
 "Hola, quiero comprar:\n"+
-"ID: "+id+"\n"+
-"Producto: "+nombre+"\n\n"+
-"Precio base: $"+precio+"\n"+
+"ID: "+productoActual.id+"\n"+
+"Producto: "+productoActual.nombre+"\n\n"+
+"Precio base: $"+productoActual.precio+"\n"+
 "Talla: "+talla+"\n\n"+
 "Extras:\n"+extras+"\n"+
 "Forma de pago: "+pago+"\n"+
@@ -1942,6 +1987,8 @@ let mensaje =
 "TOTAL: $"+total+" MXN";
 
 window.open("https://wa.me/528132802304?text="+encodeURIComponent(mensaje));
+
+cerrarModal();
 }
 </script>
 
