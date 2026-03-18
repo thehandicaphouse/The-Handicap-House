@@ -1807,10 +1807,8 @@ Comprar por WhatsApp
 
 
 
-
-
-
 <script>
+
 document.addEventListener("DOMContentLoaded",function(){
 
 const botones=document.querySelectorAll(".menu-lateral a");
@@ -1860,6 +1858,7 @@ prod.style.display="none";
 
 });
 
+
 /* COMPRA WHATSAPP */
 
 function comprarProducto(btn){
@@ -1869,10 +1868,124 @@ const nombre=btn.dataset.nombre;
 let precio=parseFloat(btn.dataset.precio);
 const cat=btn.dataset.cat;
 
-let tallas="";
+let total=precio;
+let extras="";
+
+/* ================= TALLA ================= */
+
+let tallaOpciones = [];
+if(cat==="JERSEYS") tallaOpciones=["S","M","L","XL","2XL","3XL (+$50)"];
+if(cat==="MUJER") tallaOpciones=["S","M","L","XL","2XL"];
+if(cat==="UNIFORMES") tallaOpciones=["2","4","6","8","10","12","13"];
+if(cat==="CHAMARRAS") tallaOpciones=["S","M","L","XL","2XL"];
+
+let tallaTexto="Selecciona talla:
+";
+tallaOpciones.forEach((t,i)=>{ tallaTexto += (i+1)+") "+t+"
+"; });
+
+let tallaIndex=parseInt(prompt(tallaTexto))-1;
+if(isNaN(tallaIndex) || tallaIndex<0 || tallaIndex>=tallaOpciones.length) return;
+
+let talla=tallaOpciones[tallaIndex];
+
+if(talla.includes("3XL")){
+total+=50;
+extras+="Talla 3XL (+$50)
+";
+}
+
+/* ================= PARCHE ================= */
 
 if(cat==="JERSEYS"){
-tallas="S, M, L, XL, 2XL, 3XL (+$50)";
+
+let parches=["Ninguno","Liga MX (+$25)","Leagues Cup (+$25)","CONCACAF (+$25)","Mundial de Clubes (+$25)"];
+
+let txt="Selecciona parche:
+";
+parches.forEach((p,i)=>{ txt+=(i+1)+") "+p+"
+"; });
+
+let pIndex=parseInt(prompt(txt))-1;
+
+if(pIndex>0){
+let nombreParche=parches[pIndex].replace(" (+$25)","");
+extras+="Parche: "+nombreParche+" (+$25)
+";
+total+=25;
+}
+
+}
+
+/* ================= DORSAL ================= */
+
+if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
+
+let dorsalConfirm=confirm("¿Agregar dorsal? (+$100)");
+
+if(dorsalConfirm){
+let dorsalTexto=prompt("Ejemplo: RONALDO 7");
+extras+="Dorsal: "+(dorsalTexto||"No especificado")+" (+$100)
+";
+total+=100;
+}
+
+}
+
+if(!extras) extras="Ninguno";
+
+/* ================= PAGO ================= */
+
+let pagos=["Transferencia","Efectivo (Monterrey)"];
+
+let pagoTxt="Selecciona método de pago:
+";
+pagos.forEach((p,i)=>{ pagoTxt+=(i+1)+") "+p+"
+"; });
+
+let pagoIndex=parseInt(prompt(pagoTxt))-1;
+if(pagoIndex<0 || pagoIndex>=pagos.length) return;
+
+let pago=pagos[pagoIndex];
+
+/* ================= ENVIO ================= */
+
+let envio=confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
+let envioTexto="";
+
+if(envio){
+let ciudad=prompt("Escribe tu ciudad");
+envioTexto="Sí - Ciudad: "+(ciudad||"No especificada");
+}else{
+envioTexto="No (Entrega en Monterrey)";
+}
+
+let mensaje=
+"Hola, quiero comprar:
+"+
+"ID: "+id+"
+"+
+"Producto: "+nombre+"
+
+"+
+"Precio base: $"+precio+"
+"+
+"Talla: "+talla+"
+
+"+
+"Extras:
+"+extras+"
+"+
+"Forma de pago: "+pago+"
+"+
+"Envío: "+envioTexto+"
+
+"+
+"TOTAL: $"+total+" MXN";
+
+let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
+window.open(url,"_blank");
+
 }
 else if(cat==="MUJER"){
 tallas="S, M, L, XL, 2XL";
@@ -1933,20 +2046,33 @@ envioTexto="No (Entrega en Monterrey)";
 }
 
 let mensaje=
-"Hola, quiero comprar:\n"+
-"ID: "+id+"\n"+
-"Producto: "+nombre+"\n\n"+
-"Precio base: $"+precio+"\n"+
-"Talla: "+talla+"\n\n"+
-"Extras:\n"+extras+"\n"+
-"Forma de pago: "+pago+"\n"+
-"Envío: "+envioTexto+"\n\n"+
+"Hola, quiero comprar:
+"+
+"ID: "+id+"
+"+
+"Producto: "+nombre+"
+
+"+
+"Precio base: $"+precio+"
+"+
+"Talla: "+talla+"
+
+"+
+"Extras:
+"+extras+"
+"+
+"Forma de pago: "+pago+"
+"+
+"Envío: "+envioTexto+"
+
+"+
 "TOTAL: $"+total+" MXN";
 
 let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
 window.open(url,"_blank");
 
 }
+
 </script>
 
 </body>
