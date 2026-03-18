@@ -1807,27 +1807,29 @@ Comprar por WhatsApp
 
 
 
+
+
+
 <script>
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded",function(){
-
-const botones=document.querySelectorAll(".menu-lateral a");
-const productos=document.querySelectorAll(".producto");
-const buscador=document.getElementById("buscador");
+const botones = document.querySelectorAll(".menu-lateral a");
+const productos = document.querySelectorAll(".producto");
+const buscador = document.getElementById("buscador");
 
 /* FILTROS */
-botones.forEach(function(boton){
-boton.addEventListener("click",function(e){
+botones.forEach(boton => {
+boton.addEventListener("click", e => {
 e.preventDefault();
-const categoria=this.getAttribute("data-cat");
+const categoria = boton.getAttribute("data-cat");
 
-productos.forEach(function(prod){
-if(categoria==="TODOS"){
-prod.style.display="";
-}else if(prod.getAttribute("data-categoria")===categoria){
-prod.style.display="";
-}else{
-prod.style.display="none";
+productos.forEach(prod => {
+if(categoria === "TODOS"){
+prod.style.display = "";
+} else if(prod.getAttribute("data-categoria") === categoria){
+prod.style.display = "";
+} else {
+prod.style.display = "none";
 }
 });
 });
@@ -1835,129 +1837,81 @@ prod.style.display="none";
 
 /* BUSCADOR */
 if(buscador){
-buscador.addEventListener("keyup",function(){
+buscador.addEventListener("input", () => {
+const texto = buscador.value.toLowerCase();
 
-const texto=this.value.toLowerCase();
-
-productos.forEach(function(prod){
-
-const spans=prod.querySelectorAll("span");
-const id=spans[0].textContent.toLowerCase();
-const nombre=spans[1].textContent.toLowerCase();
+productos.forEach(prod => {
+const spans = prod.querySelectorAll("span");
+const id = spans[0].textContent.toLowerCase();
+const nombre = spans[1].textContent.toLowerCase();
 
 if(id.includes(texto) || nombre.includes(texto)){
-prod.style.display="";
+prod.style.display = "";
 }else{
-prod.style.display="none";
+prod.style.display = "none";
+}
+});
+});
 }
 
 });
 
-});
-}
-
-});
-
-
-/* COMPRA WHATSAPP */
-
+/* COMPRA */
 function comprarProducto(btn){
 
-const id=btn.dataset.id;
-const nombre=btn.dataset.nombre;
-let precio=parseFloat(btn.dataset.precio);
-const cat=btn.dataset.cat;
+const id = btn.dataset.id;
+const nombre = btn.dataset.nombre;
+let precio = parseFloat(btn.dataset.precio);
+const cat = btn.dataset.cat;
 
-let tallas="";
-
-if(cat==="JERSEYS"){
-tallas="S, M, L, XL, 2XL, 3XL (+$50)";
-}
-else if(cat==="MUJER"){
-tallas="S, M, L, XL, 2XL";
-}
-else if(cat==="UNIFORMES"){
-tallas="2,3,4,5,6,7,8,9,10,11,12,13 años";
-}
-else if(cat==="CHAMARRAS"){
-tallas="S, M, L, XL, 2XL";
-}
-
-let talla=prompt("Selecciona talla disponible:\n"+tallas);
+let talla = prompt("Selecciona talla (S,M,L,XL,2XL,3XL)");
 if(!talla) return;
 
-let total=precio;
-let extras="";
+let total = precio;
+let extras = "";
 
-/* 3XL */
-if(talla.toUpperCase()==="3XL"){
-total+=50;
-extras+="Talla 3XL (+$50)\n";
+if(talla.toUpperCase() === "3XL"){
+total += 50;
+extras += "Talla 3XL (+$50)\n";
 }
 
-/* PARCHE SOLO JERSEYS */
-if(cat==="JERSEYS"){
-let parche=confirm("¿Quieres agregar un parche? (+$25 MXN)");
-if(parche){
-let parcheTexto=prompt("Especifica qué parche quieres.\nEjemplo: Champions League, Liga MX, Mundial de Clubes");
-extras+="Parche: "+(parcheTexto||"No especificado")+" (+$25)\n";
-total+=25;
+if(cat === "JERSEYS"){
+let parche = prompt("Parche: Liga MX / Leagues Cup / CONCACAF / Mundial de Clubes / Ninguno");
+if(parche && parche.toLowerCase() !== "ninguno"){
+extras += "Parche: " + parche + " (+$25)\n";
+total += 25;
 }
 }
 
-/* DORSAL JERSEYS MUJER UNIFORMES */
-if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
-let dorsal=confirm("¿Quieres agregar dorsal? (+$100 MXN)");
+if(cat === "JERSEYS" || cat === "MUJER" || cat === "UNIFORMES"){
+let dorsal = prompt("Dorsal (ej: RONALDO 7)");
 if(dorsal){
-let dorsalTexto=prompt("Escribe el dorsal exactamente como lo quieres.\nEjemplo: RONALDO 7");
-extras+="Dorsal: "+(dorsalTexto||"No especificado")+" (+$100)\n";
-total+=100;
+extras += "Dorsal: " + dorsal + " (+$100)\n";
+total += 100;
 }
 }
 
-if(!extras) extras="Ninguno";
+if(!extras) extras = "Ninguno";
 
-let pago=prompt("¿Cómo deseas pagar?\nTransferencia o Efectivo (Monterrey)");
-if(!pago) pago="No especificado";
+let pago = prompt("Pago: Transferencia / Efectivo");
+if(!pago) pago = "No especificado";
 
-/* ENVIO */
-let envio=confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
-let envioTexto="";
+let envio = confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
+let envioTexto = envio ? "Sí" : "No (Entrega en Monterrey)";
 
-if(envio){
-let ciudad=prompt("Escribe tu ciudad para calcular el envío\nEjemplo: Guadalajara");
-envioTexto="Sí - Ciudad: "+(ciudad||"No especificada");
-}else{
-envioTexto="No (Entrega en Monterrey)";
+let mensaje =
+"Hola, quiero comprar:\n" +
+"ID: " + id + "\n" +
+"Producto: " + nombre + "\n\n" +
+"Precio base: $" + precio + "\n" +
+"Talla: " + talla + "\n\n" +
+"Extras:\n" + extras + "\n" +
+"Forma de pago: " + pago + "\n" +
+"Envío: " + envioTexto + "\n\n" +
+"TOTAL: $" + total + " MXN";
+
+window.open("https://wa.me/528132802304?text=" + encodeURIComponent(mensaje));
 }
-
-let mensaje=
-"Hola, quiero comprar:\n"+
-"ID: "+id+"
-"+
-"Producto: "+nombre+"
-
-"+
-"Precio base: $"+precio+"
-"+
-"Talla: "+talla+"
-
-"+
-"Extras:
-"+extras+"
-"+
-"Forma de pago: "+pago+"
-"+
-"Envío: "+envioTexto+"
-
-"+
-"TOTAL: $"+total+" MXN";
-
-let url="https://wa.me/528132802304?text="+encodeURIComponent(mensaje);
-window.open(url,"_blank");
-
-}
-
 </script>
 
 </body>
