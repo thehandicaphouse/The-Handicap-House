@@ -1868,69 +1868,10 @@ const nombre=btn.dataset.nombre;
 let precio=parseFloat(btn.dataset.precio);
 const cat=btn.dataset.cat;
 
-let talla=prompt("Selecciona talla (S,M,L,XL,2XL,3XL)");
-if(!talla) return;
-
-let total=precio;
-let extras="";
-
-if(talla.toUpperCase()==="3XL"){
-total+=50;
-extras+="Talla 3XL (+$50)
-";
-}
+let tallas="";
 
 if(cat==="JERSEYS"){
-let parche=prompt("Parche: Liga MX / Leagues Cup / CONCACAF / Mundial de Clubes / Ninguno");
-if(parche && parche.toLowerCase()!=="ninguno"){
-extras+="Parche: "+parche+" (+$25)
-";
-total+=25;
-}
-}
-
-if(cat==="JERSEYS" || cat==="MUJER" || cat==="UNIFORMES"){
-let dorsal=prompt("Dorsal (ej: RONALDO 7) o vacío");
-if(dorsal){
-extras+="Dorsal: "+dorsal+" (+$100)
-";
-total+=100;
-}
-}
-
-if(!extras) extras="Ninguno";
-
-let pago=prompt("Pago: Transferencia / Efectivo");
-if(!pago) pago="No especificado";
-
-let envio=confirm("¿Requieres envío? (Solo si NO eres de Monterrey)");
-let envioTexto= envio ? "Sí" : "No (Entrega en Monterrey)";
-
-let mensaje=
-"Hola, quiero comprar:
-"+
-"ID: "+id+"
-"+
-"Producto: "+nombre+"
-
-"+
-"Precio base: $"+precio+"
-"+
-"Talla: "+talla+"
-
-"+
-"Extras:
-"+extras+"
-"+
-"Forma de pago: "+pago+"
-"+
-"Envío: "+envioTexto+"
-
-"+
-"TOTAL: $"+total+" MXN";
-
-window.open("https://wa.me/528132802304?text="+encodeURIComponent(mensaje));
-
+tallas="S, M, L, XL, 2XL, 3XL (+$50)";
 }
 else if(cat==="MUJER"){
 tallas="S, M, L, XL, 2XL";
@@ -1991,8 +1932,7 @@ envioTexto="No (Entrega en Monterrey)";
 }
 
 let mensaje=
-"Hola, quiero comprar:
-"+
+"Hola, quiero comprar:\n"+
 "ID: "+id+"
 "+
 "Producto: "+nombre+"
