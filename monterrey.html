@@ -1822,8 +1822,10 @@ Comprar por WhatsApp
 <select id="parcheSelect"></select><br><br>
 </div>
 
+<div id="dorsalWrap">
 <label>Dorsal (+$100):</label>
 <input id="dorsalInput" placeholder="RONALDO 7"><br><br>
+</div>
 
 <label>Pago:</label>
 <select id="pagoSelect">
@@ -1934,6 +1936,14 @@ pSel.appendChild(o);
 pWrap.style.display="none";
 }
 
+const dorsalWrap = document.getElementById("dorsalWrap");
+
+if(productoActual.cat==="CHAMARRAS"){
+dorsalWrap.style.display="none";
+}else{
+dorsalWrap.style.display="block";
+}
+
 document.getElementById("modalCompra").style.display="flex";
 }
 
@@ -1961,7 +1971,7 @@ total+=25;
 }
 
 let d=document.getElementById("dorsalInput").value;
-if(d){
+if(d && productoActual.cat!=="CHAMARRAS"){
 extras+="Dorsal: "+d+" (+$100)\n";
 total+=100;
 }
