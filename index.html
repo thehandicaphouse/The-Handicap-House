@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 
@@ -11,56 +12,86 @@
 
 <style>
 
-body{
+/* BASE */
+
+html,body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:url("fondo.png") center center fixed;
-background-size:cover;
 color:white;
+overflow-x:hidden;
 }
 
-/* BARRA SUPERIOR */
+/* FONDO */
 
-.header-top{
+.fondo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("fondo.png");
+background-position:center;
+background-size:cover;
+z-index:-2;
+}
+
+/* CINTA */
+
+.top-bar{
 background:#1a0826;
-text-align:center;
-padding:10px;
-font-size:14px;
-font-weight:bold;
-letter-spacing:1px;
+overflow:hidden;
+width:100%;
 }
 
-/* HEADER PRINCIPAL */
+.ticker{
+display:flex;
+width:max-content;
+animation:tickerMove 25s linear infinite;
+}
+
+.ticker span{
+padding-right:120px;
+font-weight:bold;
+font-size:14px;
+}
+
+@keyframes tickerMove{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* HEADER */
 
 header{
 background:#2b0c3f;
-display:flex;
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
 align-items:center;
-justify-content:space-between;
 padding:20px 40px;
 }
 
-/* LOGO */
-
-.logo img{
-height:100px;
+.logo{
+justify-self:start;
 }
 
-/* TEXTO CENTRAL */
+.logo img{
+height:150px;
+}
 
 .header-center{
 font-family:'Antonio', sans-serif;
 font-weight:900;
-font-size:34px;
-letter-spacing:2px;
-text-transform:lowercase;
+font-size:32px;
+text-align:center;
 }
 
-/* BUSCADOR */
+.search{
+justify-self:end;
+}
 
 .search input{
 padding:10px;
-width:260px;
+width:250px;
 border:none;
 border-radius:6px;
 }
@@ -70,14 +101,11 @@ border-radius:6px;
 .menu{
 display:flex;
 justify-content:center;
-gap:15px;
+gap:12px;
 padding:20px;
 }
 
-/* BOTONES DEL MENU */
-
 .menu a{
-
 background:#ff8c2a;
 color:white;
 padding:10px 18px;
@@ -85,92 +113,136 @@ border-radius:10px;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-
 }
 
 .menu a:hover{
-
 background:#ffb347;
 transform:scale(1.05);
-
 }
 
-/* BANNER */
+/* CONTENIDO */
 
-.banner{
-height:300px;
+main{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:40px;
+}
+
+/* GRID DEPORTES */
+
+.deportes{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+width:90%;
+max-width:1400px;
+}
+
+/* BOTONES DEPORTES */
+
+.deporte{
+height:220px;
+border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:40px;
+font-size:36px;
 font-weight:bold;
-}
-
-/* TITULOS */
-
-.section-title{
-text-align:center;
-font-size:28px;
-margin:40px 0 20px 0;
-}
-
-/* PRODUCTOS */
-
-.catalogo{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:40px;
-}
-
-.producto{
-background:rgba(255,255,255,0.95);
-color:black;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.producto:hover{
-transform:scale(1.05);
-}
-
-.producto img{
-width:100%;
-}
-
-.info{
-padding:15px;
-text-align:center;
-}
-
-.nombre{
-font-size:18px;
-margin-bottom:10px;
-}
-
-.precio{
-color:#27ae60;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.boton{
-display:inline-block;
-background:#ff8c2a;
-color:white;
-padding:10px 15px;
-border-radius:8px;
 text-decoration:none;
+color:white;
+background-size:cover;
+background-position:center;
+position:relative;
+overflow:hidden;
+transition:.3s;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.deporte:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,255,255,0.3);
+}
+
+.deporte::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.25);
+}
+
+/* TEXTO */
+
+.deporte span{
+position:relative;
+z-index:2;
+
+text-shadow:
+-2px -2px 0 #000,
+2px -2px 0 #000,
+-2px 2px 0 #000,
+2px 2px 0 #000,
+0 0 6px rgba(0,0,0,0.8);
 }
 
 /* FOOTER */
 
 footer{
-background:#1a0826;
 text-align:center;
 padding:30px;
+margin-top:60px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1000px){
+
+.deportes{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:768px){
+
+header{
+grid-template-columns:1fr;
+text-align:center;
+gap:12px;
+}
+
+.logo{
+justify-self:center;
+}
+
+.logo img{
+height:120px;
+}
+
+.header-center{
+font-size:24px;
+}
+
+.search{
+justify-self:center;
+}
+
+.search input{
+width:100%;
+max-width:260px;
+}
+
+.deportes{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.deporte{
+height:170px;
+font-size:28px;
+}
+
 }
 
 </style>
@@ -179,8 +251,16 @@ padding:30px;
 
 <body>
 
-<div class="header-top">
-ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕
+<div class="fondo"></div>
+
+<!-- CINTA -->
+
+<div class="top-bar">
+<div class="ticker">
+
+<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
+
+</div>
 </div>
 
 <header>
@@ -194,91 +274,44 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 
 <div class="search">
-<input type="text" id="buscador" placeholder="Buscar jerseys...">
+<input type="text" placeholder="Buscar jerseys...">
 </div>
 
 </header>
 
 <div class="menu">
-
-<a href="#">Inicio</a>
-<a href="#">Liga MX</a>
-<a href="#">Europa</a>
-<a href="#">Selecciones</a>
-<a href="#">Retro</a>
-<a href="#">Contacto</a>
-
+<a href="index.html">Inicio</a>
+<a href="mayoreo.html">Mayoreo</a>
+<a href="contacto.html">Contacto</a>
 </div>
 
-<div class="banner">
-Bienvenido a The Handicap House
-</div>
+<main>
 
-<h2 class="section-title">Jerseys disponibles</h2>
+<section class="deportes">
 
-<section class="catalogo">
+<a href="futbol.html" class="deporte" style="background-image:url('futbol.png')">
+<span>FUTBOL</span>
+</a>
 
-<div class="producto">
-<img src="jersey1.jpg">
-<div class="info">
-<div class="nombre">Jersey Monterrey</div>
-<div class="precio">$700</div>
-<a class="boton">Comprar</a>
-</div>
-</div>
+<a href="nfl.html" class="deporte" style="background-image:url('nfl.png')">
+<span>NFL</span>
+</a>
 
-<div class="producto">
-<img src="jersey2.jpg">
-<div class="info">
-<div class="nombre">Jersey Real Madrid</div>
-<div class="precio">$700</div>
-<a class="boton">Comprar</a>
-</div>
-</div>
+<a href="mlb.html" class="deporte" style="background-image:url('mlb.png')">
+<span>MLB</span>
+</a>
 
-<div class="producto">
-<img src="jersey3.jpg">
-<div class="info">
-<div class="nombre">Jersey Barcelona</div>
-<div class="precio">$700</div>
-<a class="boton">Comprar</a>
-</div>
-</div>
+<a href="nhl.html" class="deporte" style="background-image:url('nhl.png')">
+<span>NHL</span>
+</a>
 
 </section>
 
+</main>
+
 <footer>
-
-<p>© 2026 The Handicap House</p>
-
-<p>WhatsApp | Instagram | Facebook</p>
-
+© 2026 The Handicap House
 </footer>
-
-<script>
-
-const buscador = document.getElementById("buscador");
-const productos = document.querySelectorAll(".producto");
-
-buscador.addEventListener("keyup", function(){
-
-let filtro = buscador.value.toLowerCase();
-
-productos.forEach(producto => {
-
-let nombre = producto.querySelector(".nombre").textContent.toLowerCase();
-
-if(nombre.includes(filtro)){
-producto.style.display="block";
-}else{
-producto.style.display="none";
-}
-
-});
-
-});
-
-</script>
 
 </body>
 </html>
