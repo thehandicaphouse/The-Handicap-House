@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Handicap House</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
-
 <style>
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -18,9 +13,7 @@ background:url("fondo.png") center center fixed;
 background-size:cover;
 color:white;
 }
-
 /* BARRA SUPERIOR */
-
 .header-top{
 background:#1a0826;
 text-align:center;
@@ -29,9 +22,7 @@ font-size:14px;
 font-weight:bold;
 letter-spacing:1px;
 }
-
 /* HEADER PRINCIPAL */
-
 header{
 background:#2b0c3f;
 display:flex;
@@ -39,15 +30,11 @@ align-items:center;
 justify-content:space-between;
 padding:20px 40px;
 }
-
 /* LOGO */
-
 .logo img{
 height:100px;
 }
-
 /* TEXTO CENTRAL */
-
 .header-center{
 font-family:'Antonio', sans-serif;
 font-weight:900;
@@ -55,29 +42,22 @@ font-size:34px;
 letter-spacing:2px;
 text-transform:lowercase;
 }
-
 /* BUSCADOR */
-
 .search input{
 padding:10px;
 width:260px;
 border:none;
 border-radius:6px;
 }
-
 /* MENU */
-
 .menu{
 display:flex;
 justify-content:center;
 gap:15px;
 padding:20px;
 }
-
 /* BOTONES DEL MENU */
-
 .menu a{
-
 background:#ff8c2a;
 color:white;
 padding:10px 18px;
@@ -85,18 +65,12 @@ border-radius:10px;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
-
 }
-
 .menu a:hover{
-
 background:#ffb347;
 transform:scale(1.05);
-
 }
-
 /* BANNER */
-
 .banner{
 height:300px;
 display:flex;
@@ -105,24 +79,19 @@ justify-content:center;
 font-size:40px;
 font-weight:bold;
 }
-
 /* TITULOS */
-
 .section-title{
 text-align:center;
 font-size:28px;
 margin:40px 0 20px 0;
 }
-
 /* PRODUCTOS */
-
 .catalogo{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 padding:40px;
 }
-
 .producto{
 background:rgba(255,255,255,0.95);
 color:black;
@@ -131,31 +100,25 @@ overflow:hidden;
 box-shadow:0 0 10px rgba(0,0,0,0.3);
 transition:0.3s;
 }
-
 .producto:hover{
 transform:scale(1.05);
 }
-
 .producto img{
 width:100%;
 }
-
 .info{
 padding:15px;
 text-align:center;
 }
-
 .nombre{
 font-size:18px;
 margin-bottom:10px;
 }
-
 .precio{
 color:#27ae60;
 font-weight:bold;
 margin-bottom:10px;
 }
-
 .boton{
 display:inline-block;
 background:#ff8c2a;
@@ -164,60 +127,42 @@ padding:10px 15px;
 border-radius:8px;
 text-decoration:none;
 }
-
 /* FOOTER */
-
 footer{
 background:#1a0826;
 text-align:center;
 padding:30px;
 }
-
 </style>
-
 </head>
-
 <body>
-
 <div class="header-top">
 ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕
 </div>
-
 <header>
-
 <div class="logo">
 <img src="logo.png">
 </div>
-
 <div class="header-center">
 jerseys, jerseys, jerseys, jerseys!
 </div>
-
 <div class="search">
 <input type="text" id="buscador" placeholder="Buscar jerseys...">
 </div>
-
 </header>
-
 <div class="menu">
-
 <a href="#">Inicio</a>
 <a href="#">Liga MX</a>
 <a href="#">Europa</a>
 <a href="#">Selecciones</a>
 <a href="#">Retro</a>
 <a href="#">Contacto</a>
-
 </div>
-
 <div class="banner">
 Bienvenido a The Handicap House
 </div>
-
 <h2 class="section-title">Jerseys disponibles</h2>
-
 <section class="catalogo">
-
 <div class="producto">
 <img src="jersey1.jpg">
 <div class="info">
@@ -226,7 +171,6 @@ Bienvenido a The Handicap House
 <a class="boton">Comprar</a>
 </div>
 </div>
-
 <div class="producto">
 <img src="jersey2.jpg">
 <div class="info">
@@ -235,7 +179,6 @@ Bienvenido a The Handicap House
 <a class="boton">Comprar</a>
 </div>
 </div>
-
 <div class="producto">
 <img src="jersey3.jpg">
 <div class="info">
@@ -244,41 +187,25 @@ Bienvenido a The Handicap House
 <a class="boton">Comprar</a>
 </div>
 </div>
-
 </section>
-
 <footer>
-
 <p>© 2026 The Handicap House</p>
-
 <p>WhatsApp | Instagram | Facebook</p>
-
 </footer>
-
 <script>
-
 const buscador = document.getElementById("buscador");
 const productos = document.querySelectorAll(".producto");
-
 buscador.addEventListener("keyup", function(){
-
 let filtro = buscador.value.toLowerCase();
-
 productos.forEach(producto => {
-
 let nombre = producto.querySelector(".nombre").textContent.toLowerCase();
-
 if(nombre.includes(filtro)){
 producto.style.display="block";
 }else{
 producto.style.display="none";
 }
-
 });
-
 });
-
 </script>
-
 </body>
 </html>
