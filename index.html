@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 
@@ -12,121 +11,73 @@
 
 <style>
 
-/* ========================= */
-/* BASE */
-/* ========================= */
-
-html,body{
+body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+background:url("fondo.png") center center fixed;
+background-size:cover;
 color:white;
 }
 
-body{
-display:flex;
-flex-direction:column;
-min-height:100vh;
-}
+/* BARRA SUPERIOR */
 
-/* ========================= */
-/* FONDO */
-/* ========================= */
-
-.fondo{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("fondo.png");
-background-position:center;
-background-size:cover;
-background-repeat:no-repeat;
-z-index:-1;
-}
-
-/* ========================= */
-/* CINTA SUPERIOR */
-/* ========================= */
-
-.top-bar{
+.header-top{
 background:#1a0826;
-overflow:hidden;
-width:100%;
-}
-
-.ticker{
-display:flex;
-width:max-content;
-animation:tickerMove 25s linear infinite;
-}
-
-.ticker span{
-padding-right:120px;
-font-weight:bold;
+text-align:center;
+padding:10px;
 font-size:14px;
+font-weight:bold;
 letter-spacing:1px;
 }
 
-/* ANIMACION PC */
-
-@keyframes tickerMove{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
+/* HEADER PRINCIPAL */
 
 header{
 background:#2b0c3f;
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
+display:flex;
 align-items:center;
+justify-content:space-between;
 padding:20px 40px;
 }
 
-.logo{
-justify-self:start;
-}
+/* LOGO */
 
 .logo img{
-height:150px;
+height:100px;
 }
+
+/* TEXTO CENTRAL */
 
 .header-center{
 font-family:'Antonio', sans-serif;
 font-weight:900;
-font-size:32px;
+font-size:34px;
 letter-spacing:2px;
 text-transform:lowercase;
-text-align:center;
 }
 
-.search{
-justify-self:end;
-}
+/* BUSCADOR */
 
 .search input{
 padding:10px;
-width:250px;
+width:260px;
 border:none;
 border-radius:6px;
 }
 
-/* ========================= */
 /* MENU */
-/* ========================= */
 
 .menu{
 display:flex;
 justify-content:center;
-gap:12px;
+gap:15px;
 padding:20px;
 }
 
+/* BOTONES DEL MENU */
+
 .menu a{
+
 background:#ff8c2a;
 color:white;
 padding:10px 18px;
@@ -134,217 +85,92 @@ border-radius:10px;
 text-decoration:none;
 font-weight:bold;
 transition:0.3s;
+
 }
 
 .menu a:hover{
+
 background:#ffb347;
 transform:scale(1.05);
+
 }
 
-/* ========================= */
-/* CONTENIDO */
-/* ========================= */
+/* BANNER */
 
-main{
-flex:1;
+.banner{
+height:300px;
 display:flex;
 align-items:center;
 justify-content:center;
-}
-
-.deportes{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-width:90%;
-max-width:1400px;
-}
-
-/* ========================= */
-/* RECUADROS */
-/* ========================= */
-
-.deporte{
-height:220px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:36px;
+font-size:40px;
 font-weight:bold;
-color:white;
-text-decoration:none;
-background-size:cover;
-background-position:center;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
-position:relative;
-overflow:hidden;
-transition:all .25s ease;
 }
 
-/* HOVER RESTAURADO */
+/* TITULOS */
 
-.deporte:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px rgba(255,255,255,0.35);
+.section-title{
+text-align:center;
+font-size:28px;
+margin:40px 0 20px 0;
 }
 
-/* OSCURECER FONDO */
+/* PRODUCTOS */
 
-.deporte::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.25);
-}
-
-/* TEXTO */
-
-.deporte span{
-position:relative;
-z-index:2;
-
-/* CONTORNO NEGRO RESTAURADO */
-
-text-shadow:
--2px -2px 0 #000,
-2px -2px 0 #000,
--2px 2px 0 #000,
-2px 2px 0 #000,
-0 0 6px rgba(0,0,0,0.8);
-}
-
-/* ========================= */
-/* REDES */
-/* ========================= */
-
-.redes{
-display:flex;
-justify-content:center;
+.catalogo{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-margin-top:40px;
+padding:40px;
 }
 
-/* BOTONES */
-
-.redes a{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-transition:.25s;
+.producto{
+background:rgba(255,255,255,0.95);
+color:black;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+transition:0.3s;
 }
 
-/* EFECTO HOVER */
-
-.redes a:hover{
-transform:scale(1.1);
+.producto:hover{
+transform:scale(1.05);
 }
 
-/* COLORES */
-
-.whatsapp{
-background:#25D366;
+.producto img{
+width:100%;
 }
 
-.instagram{
-background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+.info{
+padding:15px;
+text-align:center;
 }
 
-.facebook{
-background:#1877F2;
+.nombre{
+font-size:18px;
+margin-bottom:10px;
 }
 
-.redes img{
-width:26px;
-height:26px;
+.precio{
+color:#27ae60;
+font-weight:bold;
+margin-bottom:10px;
 }
 
-/* ========================= */
+.boton{
+display:inline-block;
+background:#ff8c2a;
+color:white;
+padding:10px 15px;
+border-radius:8px;
+text-decoration:none;
+}
+
 /* FOOTER */
-/* ========================= */
 
 footer{
+background:#1a0826;
 text-align:center;
-padding:20px;
-font-size:14px;
-}
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media (max-width:1100px){
-
-.deportes{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-/* ========================= */
-/* MOVIL */
-/* ========================= */
-
-@media (max-width:768px){
-
-.ticker{
-animation:tickerMobile 18s linear infinite;
-}
-
-.ticker span{
-font-size:9px;
-padding-right:80px;
-}
-
-@keyframes tickerMobile{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-header{
-grid-template-columns:1fr;
-text-align:center;
-gap:12px;
-padding:18px 20px;
-}
-
-.logo{
-justify-self:center;
-}
-
-.logo img{
-height:120px;
-}
-
-.header-center{
-font-size:24px;
-}
-
-.search{
-justify-self:center;
-}
-
-.search input{
-width:100%;
-max-width:260px;
-}
-
-.deportes{
-grid-template-columns:1fr;
-gap:20px;
-padding-top:30px;
-}
-
-.deporte{
-height:170px;
-font-size:28px;
-}
-
+padding:30px;
 }
 
 </style>
@@ -353,18 +179,8 @@ font-size:28px;
 
 <body>
 
-<div class="fondo"></div>
-
-<!-- CINTA SUPERIOR -->
-
-<div class="top-bar">
-
-<div class="ticker">
-
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-
-</div>
-
+<div class="header-top">
+ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕
 </div>
 
 <header>
@@ -378,60 +194,91 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 
 <div class="search">
-<input type="text" placeholder="Buscar jerseys...">
+<input type="text" id="buscador" placeholder="Buscar jerseys...">
 </div>
 
 </header>
 
 <div class="menu">
-<a href="index.html">Inicio</a>
-<a href="mayoreo.html">Mayoreo</a>
-<a href="contacto.html">Contacto</a>
+
+<a href="#">Inicio</a>
+<a href="#">Liga MX</a>
+<a href="#">Europa</a>
+<a href="#">Selecciones</a>
+<a href="#">Retro</a>
+<a href="#">Contacto</a>
+
 </div>
 
-<main>
+<div class="banner">
+Bienvenido a The Handicap House
+</div>
 
-<section class="deportes">
+<h2 class="section-title">Jerseys disponibles</h2>
 
-<a href="futbol.html" class="deporte" style="background-image:url('futbol.png')">
-<span>FUTBOL</span>
-</a>
+<section class="catalogo">
 
-<a href="nfl.html" class="deporte" style="background-image:url('nfl.png')">
-<span>NFL</span>
-</a>
+<div class="producto">
+<img src="jersey1.jpg">
+<div class="info">
+<div class="nombre">Jersey Monterrey</div>
+<div class="precio">$700</div>
+<a class="boton">Comprar</a>
+</div>
+</div>
 
-<a href="mlb.html" class="deporte" style="background-image:url('mlb.png')">
-<span>MLB</span>
-</a>
+<div class="producto">
+<img src="jersey2.jpg">
+<div class="info">
+<div class="nombre">Jersey Real Madrid</div>
+<div class="precio">$700</div>
+<a class="boton">Comprar</a>
+</div>
+</div>
 
-<a href="nhl.html" class="deporte" style="background-image:url('nhl.png')">
-<span>NHL</span>
-</a>
+<div class="producto">
+<img src="jersey3.jpg">
+<div class="info">
+<div class="nombre">Jersey Barcelona</div>
+<div class="precio">$700</div>
+<a class="boton">Comprar</a>
+</div>
+</div>
 
 </section>
 
-</main>
-
-<div class="redes">
-
-<a class="whatsapp" href="https://wa.me/528132802304">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-
-<a class="instagram" href="https://www.instagram.com/thehandicap.house/">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-
-<a class="facebook" href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
-
-</div>
-
 <footer>
-© 2026 The Handicap House
+
+<p>© 2026 The Handicap House</p>
+
+<p>WhatsApp | Instagram | Facebook</p>
+
 </footer>
+
+<script>
+
+const buscador = document.getElementById("buscador");
+const productos = document.querySelectorAll(".producto");
+
+buscador.addEventListener("keyup", function(){
+
+let filtro = buscador.value.toLowerCase();
+
+productos.forEach(producto => {
+
+let nombre = producto.querySelector(".nombre").textContent.toLowerCase();
+
+if(nombre.includes(filtro)){
+producto.style.display="block";
+}else{
+producto.style.display="none";
+}
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
