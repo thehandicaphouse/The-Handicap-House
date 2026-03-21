@@ -12,6 +12,15 @@ flex-direction: column;
 
 #contenido {
 flex: 1;
+display:flex;
+flex-direction:column;
+justify-content:center; /* centra vertical */
+}
+
+@media (max-width: 768px){
+#contenido{
+justify-content:flex-start; /* en celular normal */
+}
 }
 </style>
 
