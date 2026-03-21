@@ -12,14 +12,12 @@ flex-direction: column;
 
 #contenido {
 flex: 1;
-display:flex;
-flex-direction:column;
-justify-content:center; /* centra vertical */
+padding-top: 80px; /* empuja contenido hacia abajo en PC */
 }
 
 @media (max-width: 768px){
 #contenido{
-justify-content:flex-start; /* en celular normal */
+padding-top: 20px; /* en móvil normal */
 }
 }
 </style>
@@ -57,7 +55,7 @@ jerseys, jerseys, jerseys, jerseys!
 
 <div id="contenido"></div>
 
-<footer style="text-align:center; padding:40px;">
+<footer style="text-align:center; padding:40px; margin-top:auto;">
 
 <div class="redes">
 
