@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Futbol | The Handicap House</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
+
 
 /* ========================= */
 /* BASE */
@@ -314,11 +312,14 @@ max-width:260px;
 
 }
 
+
 </style>
 
 </head>
 
 <body>
+
+<div class="fondo"></div>
 
 <div id="layout"></div>
 
@@ -326,25 +327,11 @@ max-width:260px;
 fetch("layout.html")
 .then(res => res.text())
 .then(data => {
-document.getElementById("layout").innerHTML = data;
-});
-</script>
+    document.getElementById("layout").innerHTML = data;
 
-
-<div class="fondo"></div>
-
-<!-- CINTA -->
-
-
-
-
-
-
-
-<div class="titulo">
+    document.getElementById("contenido").innerHTML = `<div class="titulo">
 FUTBOL
 </div>
-
 <section class="ligas">
 
 <a href="ligamx.html" class="liga">
@@ -375,11 +362,9 @@ FUTBOL
 <div class="liga"><img src="japon.png"><span>JAPON J1</span></div>
 <div class="liga"><img src="otras.png"><span>OTRAS LIGAS</span></div>
 
-</section>
-
-
-
-
+</section>`;
+});
+</script>
 
 </body>
 </html>
