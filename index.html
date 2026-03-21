@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Handicap House</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
+
 
 /* ========================= */
 /* BASE */
@@ -347,11 +347,14 @@ font-size:28px;
 
 }
 
+
 </style>
 
 </head>
 
 <body>
+
+<div class="fondo"></div>
 
 <div id="layout"></div>
 
@@ -359,22 +362,9 @@ font-size:28px;
 fetch("layout.html")
 .then(res => res.text())
 .then(data => {
-document.getElementById("layout").innerHTML = data;
-});
-</script>
+    document.getElementById("layout").innerHTML = data;
 
-
-<div class="fondo"></div>
-
-<!-- CINTA SUPERIOR -->
-
-
-
-
-
-
-
-<main>
+    document.getElementById("contenido").innerHTML = `<main>
 
 <section class="deportes">
 
@@ -396,11 +386,9 @@ document.getElementById("layout").innerHTML = data;
 
 </section>
 
-</main>
-
-
-
-
+</main>`;
+});
+</script>
 
 </body>
 </html>
