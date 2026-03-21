@@ -1,38 +1,61 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Futbol | The Handicap House</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
-
+/* ========================= */
 /* BASE */
-html,body{margin:0;font-family:Arial, Helvetica, sans-serif;color:white;}
-body{display:flex;flex-direction:column;min-height:100vh;}
-
+/* ========================= */
+html,body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+}
+body{
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+/* ========================= */
 /* FONDO */
+/* ========================= */
 .fondo{
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:url("fondofutbol.png") center/cover no-repeat;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("fondofutbol.png");
+background-position:center;
+background-size:cover;
+background-repeat:no-repeat;
 z-index:-2;
 }
 .fondo::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,.35);
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
 }
-
+/* ========================= */
 /* CINTA */
-.top-bar{background:#1a0826;overflow:hidden;width:100%;}
-.ticker{display:flex;width:max-content;animation:tickerMove 25s linear infinite;}
-.ticker span{padding-right:120px;font-weight:bold;font-size:14px;letter-spacing:1px;}
-@keyframes tickerMove{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
+/* ========================= */
+@keyframes tickerMove{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+/* ========================= */
 /* HEADER */
+/* ========================= */
 header{
 background:#0b2a5a;
 display:grid;
@@ -40,27 +63,27 @@ grid-template-columns:1fr 1fr 1fr;
 align-items:center;
 padding:20px 40px;
 }
-.logo img{height:150px;}
-.header-center{
-font-family:'Antonio', sans-serif;
-font-weight:900;
-font-size:32px;
-letter-spacing:2px;
-text-transform:lowercase;
-text-align:center;
+.logo{
+justify-self:start;
 }
-.search{justify-self:end;}
-.search input{padding:10px;width:250px;border:none;border-radius:6px;}
-
+.logo img{
+height:150px;
+}
+.search{
+justify-self:end;
+}
+.search input{
+padding:10px;
+width:250px;
+border:none;
+border-radius:6px;
+}
+/* ========================= */
 /* MENU */
-.menu{display:flex;justify-content:center;gap:12px;padding:20px;}
-.menu a{
-background:#ff8c2a;color:white;padding:10px 18px;border-radius:10px;
-text-decoration:none;font-weight:bold;transition:.3s;
-}
-.menu a:hover{background:#ffb347;transform:scale(1.05);}
-
+/* ========================= */
+/* ========================= */
 /* TITULO */
+/* ========================= */
 .titulo{
 text-align:center;
 font-family:'Antonio', sans-serif;
@@ -68,17 +91,19 @@ font-size:48px;
 margin-top:60px;
 letter-spacing:3px;
 }
-
-/* GRID */
+/* ========================= */
+/* GRID LIGAS */
+/* ========================= */
 .ligas{
-margin:60px auto 0;
+margin-top:60px;
 width:90%;
 max-width:1300px;
+margin-left:auto;
+margin-right:auto;
 display:grid;
 grid-template-columns:repeat(5,1fr);
 gap:50px;
 }
-
 .liga{
 text-align:center;
 cursor:pointer;
@@ -86,9 +111,12 @@ transition:.25s;
 text-decoration:none;
 color:white;
 }
-.liga:hover{transform:scale(1.08);}
+.liga:hover{
+transform:scale(1.08);
+}
 .liga img{
-width:90px;height:90px;
+width:90px;
+height:90px;
 object-fit:contain;
 margin-bottom:10px;
 }
@@ -97,51 +125,68 @@ display:block;
 font-size:14px;
 font-weight:bold;
 }
-
+/* ========================= */
 /* REDES */
-.redes{
-display:flex;
-justify-content:center;
-gap:25px;
-margin-top:80px;
-}
-.redes a{
-width:55px;height:55px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,.4);
-}
+/* ========================= */
 .whatsapp{background:#25D366;}
 .instagram{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);}
 .facebook{background:#1877F2;}
-.redes img{width:26px;height:26px;}
-
+/* ========================= */
 /* FOOTER */
-footer{text-align:center;padding:20px;margin-top:40px;}
-
+/* ========================= */
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+/* ========================= */
 /* RESPONSIVE */
+/* ========================= */
 @media (max-width:900px){
-.ligas{grid-template-columns:repeat(3,1fr);}
+.ligas{
+grid-template-columns:repeat(3,1fr);
+}
 }
 @media (max-width:600px){
-.ligas{grid-template-columns:repeat(2,1fr);gap:30px;}
-.titulo{font-size:34px;}
+.ligas{
+grid-template-columns:repeat(2,1fr);
+gap:30px;
 }
-
+.titulo{
+font-size:34px;
+}
+}
+/* ========================= */
 /* MOVIL */
+/* ========================= */
 @media (max-width:768px){
-.ticker{animation:tickerMobile 18s linear infinite;}
-.ticker span{font-size:9px;padding-right:80px;}
-@keyframes tickerMobile{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
-header{grid-template-columns:1fr;text-align:center;gap:12px;padding:18px 20px;}
-.logo img{height:120px;}
-.header-center{font-size:24px;}
-.search{justify-self:center;}
-.search input{width:100%;max-width:260px;}
+@keyframes tickerMobile{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+header{
+grid-template-columns:1fr;
+text-align:center;
+gap:12px;
+padding:18px 20px;
+}
+.logo{
+justify-self:center;
+}
+.logo img{
+height:120px;
+}
+.search{
+justify-self:center;
+}
+.search input{
+width:100%;
+max-width:260px;
+}
 }
 
 
-/* === STANDARD OVERRIDE === */
+/* === STANDARD CLEAN === */
 
 
 /* BASE */
@@ -299,11 +344,14 @@ font-size:14px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="fondo"></div>
+
+<!-- CINTA -->
 
 <!-- CINTA SUPERIOR EXACTA -->
 <div class="top-bar">
@@ -336,37 +384,39 @@ jerseys, jerseys, jerseys, jerseys!
 <a href="contacto.html">Contacto</a>
 </div>
 
-<div class="titulo">FUTBOL</div>
+<div class="titulo">
+FUTBOL
+</div>
 
 <section class="ligas">
 
 <a href="ligamx.html" class="liga">
-<img src="ligamx.png" loading="lazy">
+<img src="ligamx.png">
 <span>LIGA MX</span>
 </a>
 
-<div class="liga"><img src="premier.png" loading="lazy"><span>PREMIER LEAGUE</span></div>
-<div class="liga"><img src="laliga.png" loading="lazy"><span>LA LIGA</span></div>
-<div class="liga"><img src="seriea.png" loading="lazy"><span>SERIE A</span></div>
-<div class="liga"><img src="bundesliga.png" loading="lazy"><span>BUNDESLIGA</span></div>
+<div class="liga"><img src="premier.png"><span>PREMIER LEAGUE</span></div>
+<div class="liga"><img src="laliga.png"><span>LA LIGA</span></div>
+<div class="liga"><img src="seriea.png"><span>SERIE A</span></div>
+<div class="liga"><img src="bundesliga.png"><span>BUNDESLIGA</span></div>
 
-<div class="liga"><img src="ligue1.png" loading="lazy"><span>LIGUE 1</span></div>
-<div class="liga"><img src="selecciones.png" loading="lazy"><span>SELECCIONES</span></div>
-<div class="liga"><img src="mls.png" loading="lazy"><span>MLS</span></div>
-<div class="liga"><img src="eredivisie.png" loading="lazy"><span>EREDIVISIE</span></div>
-<div class="liga"><img src="portugal.png" loading="lazy"><span>LIGA PORTUGAL</span></div>
+<div class="liga"><img src="ligue1.png"><span>LIGUE 1</span></div>
+<div class="liga"><img src="selecciones.png"><span>SELECCIONES</span></div>
+<div class="liga"><img src="mls.png"><span>MLS</span></div>
+<div class="liga"><img src="eredivisie.png"><span>EREDIVISIE</span></div>
+<div class="liga"><img src="portugal.png"><span>LIGA PORTUGAL</span></div>
 
-<div class="liga"><img src="saudi.png" loading="lazy"><span>SAUDI PRO LEAGUE</span></div>
-<div class="liga"><img src="turquia.png" loading="lazy"><span>TURKISH SUPER LEAGUE</span></div>
-<div class="liga"><img src="scotland.png" loading="lazy"><span>SCOTTISH PREMIERSHIP</span></div>
-<div class="liga"><img src="brasil.png" loading="lazy"><span>BRASILEIRAO</span></div>
-<div class="liga"><img src="argentina.png" loading="lazy"><span>LIGA ARGENTINA</span></div>
+<div class="liga"><img src="saudi.png"><span>SAUDI PRO LEAGUE</span></div>
+<div class="liga"><img src="turquia.png"><span>TURKISH SUPER LEAGUE</span></div>
+<div class="liga"><img src="scotland.png"><span>SCOTTISH PREMIERSHIP</span></div>
+<div class="liga"><img src="brasil.png"><span>BRASILEIRAO</span></div>
+<div class="liga"><img src="argentina.png"><span>LIGA ARGENTINA</span></div>
 
-<div class="liga"><img src="chile.png" loading="lazy"><span>LIGA CHILE</span></div>
-<div class="liga"><img src="uruguay.png" loading="lazy"><span>LIGA URUGUAY</span></div>
-<div class="liga"><img src="colombia.png" loading="lazy"><span>COLOMBIA PRIMERA A</span></div>
-<div class="liga"><img src="japon.png" loading="lazy"><span>JAPON J1</span></div>
-<div class="liga"><img src="otras.png" loading="lazy"><span>OTRAS LIGAS</span></div>
+<div class="liga"><img src="chile.png"><span>LIGA CHILE</span></div>
+<div class="liga"><img src="uruguay.png"><span>LIGA URUGUAY</span></div>
+<div class="liga"><img src="colombia.png"><span>COLOMBIA PRIMERA A</span></div>
+<div class="liga"><img src="japon.png"><span>JAPON J1</span></div>
+<div class="liga"><img src="otras.png"><span>OTRAS LIGAS</span></div>
 
 </section>
 
