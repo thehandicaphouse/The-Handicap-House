@@ -36,7 +36,7 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 
 <div class="search">
-<input type="text" placeholder="Buscar jerseys...">
+<input type="text" id="buscador" placeholder="Buscar jerseys..."><div id="resultados" style="position:absolute;background:#111;width:250px;z-index:1000;"></div>
 </div>
 </header>
 
@@ -110,3 +110,32 @@ transform: scale(1.15);
 box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 </style>
+
+
+<script>
+let productos=[];
+fetch("productos.csv")
+.then(r=>r.text())
+.then(d=>{
+const f=d.split("\n");
+productos=f.slice(1).map(x=>{
+const c=x.split(",");
+return {nombre:c[1],equipo:c[5],liga:c[4]};
+});
+});
+
+document.addEventListener("input",e=>{
+if(e.target.id==="buscador"){
+const v=e.target.value.toLowerCase();
+const r=document.getElementById("resultados");
+r.innerHTML="";
+if(v.length<2)return;
+
+productos.filter(p=>p.nombre.toLowerCase().includes(v)||p.equipo.toLowerCase().includes(v)||p.liga.toLowerCase().includes(v))
+.slice(0,5)
+.forEach(p=>{
+r.innerHTML+=`<div style="padding:6px;cursor:pointer" onclick="window.location.href='monterrey.html'">${p.nombre}</div>`;
+});
+}
+});
+</script>
