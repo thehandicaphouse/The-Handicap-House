@@ -35,8 +35,9 @@ flex: 1;
 jerseys, jerseys, jerseys, jerseys!
 </div>
 
-<div class="search">
-<input type="text" placeholder="Buscar jerseys...">
+<div class="search" style="position:relative;">
+<input type="text" id="buscador" placeholder="Buscar jerseys...">
+<div id="resultados" style="position:absolute;background:#111;width:260px;z-index:1000;border-radius:6px;"></div>
 </div>
 </header>
 
@@ -99,7 +100,6 @@ height:26px;
 .redes .facebook{background:#1877F2;}
 </style>
 
-
 <style>
 .redes .btn{
 transition: all 0.3s ease;
@@ -110,3 +110,66 @@ transform: scale(1.15);
 box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 </style>
+
+<script>
+let productos = [];
+
+fetch("productos.csv")
+.then(res => res.text())
+.then(data => {
+
+const filas = data.trim().split(/\r?\n/);
+
+productos = filas.slice(1).map(x => {
+const c = x.split(",").map(v => v.replace(/"/g,"").trim());
+
+return {
+id:c[0],
+nombre:c[1],
+precio:c[2],
+categoria:c[3],
+liga:c[4],
+equipo:c[5],
+imagen:c[6]
+};
+});
+
+});
+
+document.addEventListener("input", e => {
+
+if(e.target.id === "buscador"){
+
+const v = e.target.value.toLowerCase().trim();
+const r = document.getElementById("resultados");
+
+r.innerHTML = "";
+
+if(v.length < 2) return;
+
+const filtrados = productos.filter(p => 
+(p.id && p.id.toLowerCase().includes(v)) ||
+(p.nombre && p.nombre.toLowerCase().includes(v)) ||
+(p.equipo && p.equipo.toLowerCase().includes(v)) ||
+(p.liga && p.liga.toLowerCase().includes(v))
+);
+
+filtrados.slice(0,6).forEach(p => {
+
+r.innerHTML += `
+<div style="display:flex;gap:10px;align-items:center;padding:8px;border-bottom:1px solid #333;cursor:pointer"
+onclick="window.location.href='monterrey.html'">
+
+<img src="${p.imagen}" style="width:40px;height:40px;object-fit:cover;">
+
+<span style="font-size:12px;">${p.nombre}</span>
+
+</div>
+`;
+
+});
+
+}
+
+});
+</script>
