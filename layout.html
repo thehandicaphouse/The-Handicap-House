@@ -136,11 +136,15 @@ imagen:c[6]
 
 });
 
-document.addEventListener("input", e => {
+document.addEventListener("DOMContentLoaded", () => {
 
-if(e.target.id === "buscador"){
+const buscador = document.getElementById("buscador");
 
-const v = e.target.value.toLowerCase().trim();
+if(!buscador) return;
+
+buscador.addEventListener("input", function(){
+
+const v = this.value.toLowerCase().trim();
 const r = document.getElementById("resultados");
 
 r.innerHTML = "";
@@ -161,7 +165,6 @@ r.innerHTML += `
 onclick="window.location.href='monterrey.html'">
 
 <img src="${p.imagen}" style="width:40px;height:40px;object-fit:cover;">
-
 <span style="font-size:12px;">${p.nombre}</span>
 
 </div>
@@ -169,7 +172,7 @@ onclick="window.location.href='monterrey.html'">
 
 });
 
-}
+});
 
 });
 </script>
