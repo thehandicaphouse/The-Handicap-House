@@ -12,13 +12,6 @@ flex-direction: column;
 
 #contenido {
 flex: 1;
-padding-top: 80px; /* empuja contenido hacia abajo en PC */
-}
-
-@media (max-width: 768px){
-#contenido{
-padding-top: 20px; /* en móvil normal */
-}
 }
 </style>
 
@@ -55,7 +48,7 @@ jerseys, jerseys, jerseys, jerseys!
 
 <div id="contenido"></div>
 
-<footer style="text-align:center; padding:40px; margin-top:auto;">
+<footer style="text-align:center; padding:40px;">
 
 <div class="redes">
 
@@ -104,4 +97,16 @@ height:26px;
 .redes .whatsapp{background:#25D366;}
 .redes .instagram{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);}
 .redes .facebook{background:#1877F2;}
+</style>
+
+
+<style>
+.redes .btn{
+transition: all 0.3s ease;
+}
+
+.redes .btn:hover{
+transform: scale(1.15);
+box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
 </style>
