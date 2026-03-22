@@ -1,28 +1,12 @@
-<style>
-html, body {height:100%;margin:0;}
-#page {min-height:100vh;display:flex;flex-direction:column;}
-#contenido {flex:1;}
-</style>
-
-<div id="page">
-
 <div class="top-bar">
 <div class="ticker">
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 </div>
 </div>
 
 <header>
-<div class="logo">
-<img src="logo.png">
-</div>
-
-<div class="header-center">
-jerseys, jerseys, jerseys, jerseys!
-</div>
+<div class="logo"><img src="logo.png"></div>
+<div class="header-center">jerseys, jerseys, jerseys!</div>
 
 <div class="search" style="position:relative;">
 <input type="text" id="buscador" placeholder="Buscar jerseys...">
@@ -30,43 +14,16 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 </header>
 
-<div class="menu">
-<a href="index.html">Inicio</a>
-<a href="mayoreo.html">Mayoreo</a>
-<a href="contacto.html">Contacto</a>
-</div>
-
-<div id="contenido"></div>
-
-<footer style="text-align:center; padding:40px;">
-<div class="redes">
-<a href="https://wa.me/528132802304" class="btn whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-<a href="https://www.instagram.com/thehandicap.house/" class="btn instagram">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-<a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr" class="btn facebook">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
-</div>
-<div style="font-size:14px;">© 2026 The Handicap House</div>
-</footer>
-
-</div>
-
 <script>
 let productos = [];
 
 fetch("productos.csv")
 .then(res => res.text())
 .then(data => {
-
 const filas = data.trim().split(/\r?\n/);
 
 productos = filas.slice(1).map(x => {
 const c = x.split(",").map(v => v.replace(/"/g,"").trim());
-
 return {
 id:c[0],
 nombre:c[1],
@@ -77,20 +34,13 @@ equipo:c[5],
 imagen:c[6]
 };
 });
-
-console.log("Productos cargados:", productos);
-
 });
 
 document.addEventListener("input", e => {
-
 if(e.target.id === "buscador"){
-
 const v = e.target.value.toLowerCase().trim();
 const r = document.getElementById("resultados");
-
 r.innerHTML = "";
-
 if(v.length < 2) return;
 
 const filtrados = productos.filter(p => 
@@ -101,21 +51,12 @@ const filtrados = productos.filter(p =>
 );
 
 filtrados.slice(0,6).forEach(p => {
-
 r.innerHTML += `
-<div style="display:flex;gap:10px;align-items:center;padding:8px;border-bottom:1px solid #333;cursor:pointer"
-onclick="window.location.href='monterrey.html'">
-
-<img src="${p.imagen}" style="width:40px;height:40px;object-fit:cover;">
-
+<div style="display:flex;gap:10px;align-items:center;padding:8px;border-bottom:1px solid #333;cursor:pointer">
+<img src="${p.imagen}" style="width:40px;height:40px;">
 <span style="font-size:12px;">${p.nombre}</span>
-
-</div>
-`;
-
+</div>`;
 });
-
 }
-
 });
 </script>
