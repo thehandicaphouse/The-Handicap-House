@@ -56,57 +56,64 @@ jerseys, jerseys, jerseys, jerseys!
 </div>
 
 <script>
-let productos=[];
+let productos = [];
 
 fetch("productos.csv")
-.then(r=>r.text())
-.then(d=>{
+.then(res => res.text())
+.then(data => {
 
-const filas = d.trim().split(/\r?\n/);
+const filas = data.trim().split(/\r?\n/);
 
-productos = filas.slice(1).map(x=>{
-const c = x.split(",").map(v => v.trim());
+productos = filas.slice(1).map(x => {
+const c = x.split(";").map(v => v.trim());
 
 return {
-id:c[0],
-nombre:c[1],
-precio:c[2],
-categoria:c[3],
-liga:c[4],
-equipo:c[5],
-imagen:c[6]
+id: c[0],
+nombre: c[1],
+precio: c[2],
+categoria: c[3],
+liga: c[4],
+equipo: c[5],
+imagen: c[6]
 };
 });
 
 });
 
-document.addEventListener("input",e=>{
-if(e.target.id==="buscador"){
+document.addEventListener("input", e => {
 
-const v=e.target.value.toLowerCase().trim();
-const r=document.getElementById("resultados");
+if(e.target.id === "buscador"){
 
-r.innerHTML="";
+const v = e.target.value.toLowerCase().trim();
+const r = document.getElementById("resultados");
 
-if(v.length<2) return;
+r.innerHTML = "";
 
-const filtrados=productos.filter(p=>
+if(v.length < 2) return;
+
+const filtrados = productos.filter(p => 
 (p.id && p.id.toLowerCase().includes(v)) ||
 (p.nombre && p.nombre.toLowerCase().includes(v)) ||
 (p.equipo && p.equipo.toLowerCase().includes(v)) ||
 (p.liga && p.liga.toLowerCase().includes(v))
 );
 
-filtrados.slice(0,6).forEach(p=>{
-r.innerHTML+=`
+filtrados.slice(0,6).forEach(p => {
+
+r.innerHTML += `
 <div style="display:flex;gap:10px;align-items:center;padding:8px;border-bottom:1px solid #333;cursor:pointer"
 onclick="window.location.href='monterrey.html'">
+
 <img src="${p.imagen}" style="width:40px;height:40px;object-fit:cover;">
+
 <span style="font-size:12px;">${p.nombre}</span>
+
 </div>
 `;
+
 });
 
 }
+
 });
 </script>
