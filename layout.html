@@ -65,7 +65,7 @@ fetch("productos.csv")
 const filas = data.trim().split(/\r?\n/);
 
 productos = filas.slice(1).map(x => {
-const c = x.split(";").map(v => v.trim());
+const c = x.split(";").map(v => v.replace(/"/g,"").trim());
 
 return {
 id: c[0],
@@ -77,6 +77,8 @@ equipo: c[5],
 imagen: c[6]
 };
 });
+
+console.log("Productos cargados:", productos);
 
 });
 
