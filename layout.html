@@ -1,18 +1,7 @@
 <style>
-html, body {
-height: 100%;
-margin: 0;
-}
-
-#page {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-}
-
-#contenido {
-flex: 1;
-}
+html, body {height:100%;margin:0;}
+#page {min-height:100vh;display:flex;flex-direction:column;}
+#contenido {flex:1;}
 </style>
 
 <div id="page">
@@ -28,15 +17,16 @@ flex: 1;
 
 <header>
 <div class="logo">
-<img src="logo.png" alt="logo">
+<img src="logo.png">
 </div>
 
 <div class="header-center">
 jerseys, jerseys, jerseys, jerseys!
 </div>
 
-<div class="search">
-<input type="text" id="buscador" placeholder="Buscar jerseys..."><div id="resultados" style="position:absolute;background:#111;width:250px;z-index:1000;"></div>
+<div class="search" style="position:relative;">
+<input type="text" id="buscador" placeholder="Buscar jerseys...">
+<div id="resultados" style="position:absolute;background:#111;width:250px;z-index:1000;border-radius:6px;"></div>
 </div>
 </header>
 
@@ -49,93 +39,71 @@ jerseys, jerseys, jerseys, jerseys!
 <div id="contenido"></div>
 
 <footer style="text-align:center; padding:40px;">
-
 <div class="redes">
-
 <a href="https://wa.me/528132802304" class="btn whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
-
 <a href="https://www.instagram.com/thehandicap.house/" class="btn instagram">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
-
 <a href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr" class="btn facebook">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
 </a>
-
 </div>
-
 <div style="font-size:14px;">© 2026 The Handicap House</div>
-
 </footer>
 
 </div>
 
-<style>
-.redes{
-display:flex;
-justify-content:center;
-gap:25px;
-margin-bottom:10px;
-}
-
-.redes .btn{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.redes .btn img{
-width:26px;
-height:26px;
-}
-
-.redes .whatsapp{background:#25D366;}
-.redes .instagram{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);}
-.redes .facebook{background:#1877F2;}
-</style>
-
-
-<style>
-.redes .btn{
-transition: all 0.3s ease;
-}
-
-.redes .btn:hover{
-transform: scale(1.15);
-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-}
-</style>
-
-
 <script>
 let productos=[];
+
 fetch("productos.csv")
 .then(r=>r.text())
 .then(d=>{
-const f=d.split("\n");
-productos=f.slice(1).map(x=>{
+const filas=d.split("\n");
+
+productos=filas.slice(1).map(x=>{
 const c=x.split(",");
-return {nombre:c[1],equipo:c[5],liga:c[4]};
+return {
+id:c[0],
+nombre:c[1],
+precio:c[2],
+categoria:c[3],
+liga:c[4],
+equipo:c[5],
+imagen:c[6]
+};
 });
 });
 
 document.addEventListener("input",e=>{
 if(e.target.id==="buscador"){
+
 const v=e.target.value.toLowerCase();
 const r=document.getElementById("resultados");
-r.innerHTML="";
-if(v.length<2)return;
 
-productos.filter(p=>p.nombre.toLowerCase().includes(v)||p.equipo.toLowerCase().includes(v)||p.liga.toLowerCase().includes(v))
-.slice(0,5)
-.forEach(p=>{
-r.innerHTML+=`<div style="padding:6px;cursor:pointer" onclick="window.location.href='monterrey.html'">${p.nombre}</div>`;
+r.innerHTML="";
+
+if(v.length<2) return;
+
+const filtrados=productos.filter(p=>
+(p.id && p.id.toLowerCase().includes(v)) ||
+(p.nombre && p.nombre.toLowerCase().includes(v)) ||
+(p.equipo && p.equipo.toLowerCase().includes(v)) ||
+(p.liga && p.liga.toLowerCase().includes(v))
+);
+
+filtrados.slice(0,6).forEach(p=>{
+r.innerHTML+=`
+<div style="display:flex;gap:10px;align-items:center;padding:8px;border-bottom:1px solid #333;cursor:pointer"
+onclick="window.location.href='monterrey.html'">
+<img src="${p.imagen}" style="width:40px;height:40px;object-fit:cover;">
+<span style="font-size:12px;">${p.nombre}</span>
+</div>
+`;
 });
+
 }
 });
 </script>
