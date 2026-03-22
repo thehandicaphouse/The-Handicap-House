@@ -8,8 +8,6 @@
 
 <title>Monterrey | The Handicap House</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -418,37 +416,24 @@ background:#1ebe5d;
 
 <body>
 
+<div id="layout"></div>
+
+<script>
+fetch("layout.html")
+.then(res => res.text())
+.then(data => {
+document.getElementById("layout").innerHTML = data;
+});
+</script>
+
+
 <div class="fondo"></div>
 
-<div class="top-bar">
-<div class="ticker">
 
-<span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span> <span>ENVIOS A TODO MEXICO ✈ | CALIDAD PREMIUM ⭐ | VARIEDAD TOTAL 👕</span>
 
-</div>
-</div>
 
-<header>
 
-<div class="logo">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="logo.png" alt="logo">
-</div>
 
-<div class="header-center">
-jerseys, jerseys, jerseys, jerseys!
-</div>
-
-<div class="search">
-<input type="text" id="buscador" placeholder="Buscar por nombre o ID...">
-</div>
-
-</header>
-
-<div class="menu">
-<a href="index.html">Inicio</a>
-<a href="mayoreo.html">Mayoreo</a>
-<a href="contacto.html">Contacto</a>
-</div>
 
 <div class="contenedor">
 
@@ -466,7 +451,7 @@ jerseys, jerseys, jerseys, jerseys!
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY07-08L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY07-08L.png">
 <span style="font-size:11px;opacity:.6">MTY07-08L</span>
 <span>MONTERREY 07/08 LOCAL</span>
 <span>$800</span>
@@ -486,7 +471,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY00-01L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY00-01L.png">
 <span style="font-size:11px;opacity:.6">MTY00-01L</span>
 <span>MONTERREY 00/01 LOCAL</span>
 <span>$800</span>
@@ -506,7 +491,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY05-06V.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY05-06V.png">
 <span style="font-size:11px;opacity:.6">MTY05-06V</span>
 <span>MONTERREY 05/06 VISITA</span>
 <span>$800</span>
@@ -526,7 +511,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="CHAMARRAS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25WDV.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25WDV.png">
 <span style="font-size:11px;opacity:.6">MTY25WDV</span>
 <span>MONTERREY 2025 ROMPEVIENTOS DOBLE VISTA</span>
 <span>$1200</span>
@@ -546,7 +531,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="CHAMARRAS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26CH.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26CH.png">
 <span style="font-size:11px;opacity:.6">MTY25-26CH</span>
 <span>MONTERREY 25/26 CHAMARRA</span>
 <span>$1100</span>
@@ -566,7 +551,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITL.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITL.png">
 <span style="font-size:11px;opacity:.6">MTY25-26KKITL</span>
 <span>MONTERREY 25/26 LOCAL KIT NIÑO</span>
 <span>$700</span>
@@ -586,7 +571,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LP.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LP.png">
 <span style="font-size:11px;opacity:.6">MTY25-26LP</span>
 <span>MONTERREY 25/26 LOCAL VERSION JUGADOR</span>
 <span>$800</span>
@@ -606,7 +591,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LLS.png">
 <span style="font-size:11px;opacity:.6">MTY25-26LLS</span>
 <span>MONTERREY 25/26 LOCAL MANGA LARGA</span>
 <span>$800</span>
@@ -626,7 +611,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26L.png">
 <span style="font-size:11px;opacity:.6">MTY25-26L</span>
 <span>MONTERREY 25/26 LOCAL</span>
 <span>$700</span>
@@ -646,7 +631,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="MUJER">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LM.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LM.png">
 <span style="font-size:11px;opacity:.6">MTY25-26LM</span>
 <span>MONTERREY 25/26 LOCAL MUJER</span>
 <span>$700</span>
@@ -666,7 +651,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26VP.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26VP.png">
 <span style="font-size:11px;opacity:.6">MTY25-26VP</span>
 <span>MONTERREY 25/26 VISITA VERSION JUGADOR</span>
 <span>$800</span>
@@ -686,7 +671,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="MUJER">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26VM.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26VM.png">
 <span style="font-size:11px;opacity:.6">MTY25-26VM</span>
 <span>MONTERREY 25/26 VISITA MUJER</span>
 <span>$700</span>
@@ -706,7 +691,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITV.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITV.png">
 <span style="font-size:11px;opacity:.6">MTY25-26KKITV</span>
 <span>MONTERREY 25/26 VISITA KIT NIÑO</span>
 <span>$700</span>
@@ -726,7 +711,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26V.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26V.png">
 <span style="font-size:11px;opacity:.6">MTY25-26V</span>
 <span>MONTERREY 25/26 VISITA</span>
 <span>$700</span>
@@ -746,7 +731,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26VLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26VLS.png">
 <span style="font-size:11px;opacity:.6">MTY25-26VLS</span>
 <span>MONTERREY 25/26 VISITA MANGA LARGA</span>
 <span>$800</span>
@@ -766,7 +751,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26TP.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26TP.png">
 <span style="font-size:11px;opacity:.6">MTY25-26TP</span>
 <span>MONTERREY 25/26 TERCERA VERSION JUGADOR</span>
 <span>$800</span>
@@ -786,7 +771,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26TLSP.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26TLSP.png">
 <span style="font-size:11px;opacity:.6">MTY25-26TLSP</span>
 <span>MONTERREY 25/26 TERCERA MANGA LARGA VERSION JUGADOR</span>
 <span>$900</span>
@@ -806,7 +791,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITT.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITT.png">
 <span style="font-size:11px;opacity:.6">MTY25-26KKITT</span>
 <span>MONTERREY 25/26 TERCERA KIT NIÑO</span>
 <span>$700</span>
@@ -826,7 +811,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="MUJER">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26TM.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26TM.png">
 <span style="font-size:11px;opacity:.6">MTY25-26TM</span>
 <span>MONTERREY 25/26 TERCERA MUJER</span>
 <span>$700</span>
@@ -846,7 +831,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-25POR1.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-25POR1.png">
 <span style="font-size:11px;opacity:.6">MTY25-25POR1</span>
 <span>MONTERREY 25/26 PORTERO 1</span>
 <span>$700</span>
@@ -866,7 +851,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-25POR2.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-25POR2.png">
 <span style="font-size:11px;opacity:.6">MTY25-25POR2</span>
 <span>MONTERREY 25/26 PORTERO 2</span>
 <span>$700</span>
@@ -886,7 +871,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-25POR3.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-25POR3.png">
 <span style="font-size:11px;opacity:.6">MTY25-25POR3</span>
 <span>MONTERREY 25/26 PORTERO 3</span>
 <span>$700</span>
@@ -906,7 +891,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITPOR1.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITPOR1.png">
 <span style="font-size:11px;opacity:.6">MTY25-26KKITPOR1</span>
 <span>MONTERREY 25/26 PORTERO 1 KIT NIÑO</span>
 <span>$700</span>
@@ -926,7 +911,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITPOR2.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITPOR2.png">
 <span style="font-size:11px;opacity:.6">MTY25-26KKITPOR2</span>
 <span>MONTERREY 25/26 PORTERO 2 KIT NIÑO</span>
 <span>$700</span>
@@ -946,7 +931,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ESLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ESLS.png">
 <span style="font-size:11px;opacity:.6">MTY25-26ESLS</span>
 <span>MONTERREY 25/26 EDICION ESPECIAL MANGA LARGA</span>
 <span>$800</span>
@@ -966,7 +951,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ENT1.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ENT1.png">
 <span style="font-size:11px;opacity:.6">MTY25-26ENT1</span>
 <span>MONTERREY 25/26 ENTRENAMIENTO 1</span>
 <span>$700</span>
@@ -986,7 +971,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ENT2.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ENT2.png">
 <span style="font-size:11px;opacity:.6">MTY25-26ENT2</span>
 <span>MONTERREY 25/26 ENTRENAMIENTO 2</span>
 <span>$700</span>
@@ -1006,7 +991,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ES.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26ES.png">
 <span style="font-size:11px;opacity:.6">MTY25-26ES</span>
 <span>MONTERREY 25/26 EDICION ESPECIAL</span>
 <span>$800</span>
@@ -1026,7 +1011,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26SIN.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26SIN.png">
 <span style="font-size:11px;opacity:.6">MTY25-26SIN</span>
 <span>MONTERREY 25/26 SINGLET</span>
 <span>$700</span>
@@ -1046,7 +1031,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LPM.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LPM.png">
 <span style="font-size:11px;opacity:.6">MTY25-26LPM</span>
 <span>MONTERREY 25/26 LOCAL VERSION JUGADOR M LOGO</span>
 <span>$800</span>
@@ -1066,7 +1051,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LLSM.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LLSM.png">
 <span style="font-size:11px;opacity:.6">MTY25-26LLSM</span>
 <span>MONTERREY 25/26 LOCAL MANGA LARGA M LOGO</span>
 <span>$900</span>
@@ -1086,7 +1071,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LML.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26LML.png">
 <span style="font-size:11px;opacity:.6">MTY25-26LML</span>
 <span>MONTERREY 25/26 LOCAL M LOGO</span>
 <span>$700</span>
@@ -1106,7 +1091,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITLM.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26KKITLM.png">
 <span style="font-size:11px;opacity:.6">MTY25-26KKITLM</span>
 <span>MONTERREY 25/26 LOCAL KIT M LOGO NIÑO</span>
 <span>$700</span>
@@ -1126,7 +1111,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LMC.png">
 <span style="font-size:11px;opacity:.6">MTY25LMC</span>
 <span>MONTERREY 2025 LOCAL MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1146,7 +1131,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LLSMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LLSMC.png">
 <span style="font-size:11px;opacity:.6">MTY25LLSMC</span>
 <span>MONTERREY 2025 LOCAL MANGA LARGA MUNDIAL CLUBES</span>
 <span>$900</span>
@@ -1166,7 +1151,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="MUJER">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LMMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LMMC.png">
 <span style="font-size:11px;opacity:.6">MTY25LMMC</span>
 <span>MONTERREY 2025 LOCAL MUJER MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1186,7 +1171,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LPMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25LPMC.png">
 <span style="font-size:11px;opacity:.6">MTY25LPMC</span>
 <span>MONTERREY 2025 LOCAL VERSION JUGADOR MUNDIAL CLUBES</span>
 <span>$800</span>
@@ -1206,7 +1191,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25KKITLMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25KKITLMC.png">
 <span style="font-size:11px;opacity:.6">MTY25KKITLMC</span>
 <span>MONTERREY 2025 LOCAL MUNDIAL CLUBES KIT</span>
 <span>$700</span>
@@ -1226,7 +1211,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25SINMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25SINMC.png">
 <span style="font-size:11px;opacity:.6">MTY25SINMC</span>
 <span>MONTERREY 2025 SINGLET MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1246,7 +1231,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25VPMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25VPMC.png">
 <span style="font-size:11px;opacity:.6">MTY25VPMC</span>
 <span>MONTERREY 2025 VISITA VERSION JUGADOR MUNDIAL CLUBES</span>
 <span>$800</span>
@@ -1266,7 +1251,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25VMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25VMC.png">
 <span style="font-size:11px;opacity:.6">MTY25VMC</span>
 <span>MONTERREY 2025 VISITA MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1286,7 +1271,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25PMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25PMC.png">
 <span style="font-size:11px;opacity:.6">MTY25PMC</span>
 <span>MONTERREY 2025 PORTERO MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1306,7 +1291,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="UNIFORMES">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25KKITVMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25KKITVMC.png">
 <span style="font-size:11px;opacity:.6">MTY25KKITVMC</span>
 <span>MONTERREY 2025 VISITA MUNDIAL CLUBES KIT</span>
 <span>$700</span>
@@ -1326,7 +1311,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25ESMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25ESMC.png">
 <span style="font-size:11px;opacity:.6">MTY25ESMC</span>
 <span>MONTERREY 2025 EDICION ESPECIAL MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1346,7 +1331,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25ESSINMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25ESSINMC.png">
 <span style="font-size:11px;opacity:.6">MTY25ESSINMC</span>
 <span>MONTERREY 2025 SINGLET EDICION ESPECIAL MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1366,7 +1351,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="MUJER">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25ESMMC.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25ESMMC.png">
 <span style="font-size:11px;opacity:.6">MTY25ESMMC</span>
 <span>MONTERREY 2025 EDICION ESPECIAL MUJER MUNDIAL CLUBES</span>
 <span>$700</span>
@@ -1386,7 +1371,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY24-25TP.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY24-25TP.png">
 <span style="font-size:11px;opacity:.6">MTY24-25TP</span>
 <span>MONTERREY 24/25 TERCERA VERSION JUGADOR</span>
 <span>$800</span>
@@ -1406,7 +1391,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00LLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00LLS.png">
 <span style="font-size:11px;opacity:.6">MTY99-00LLS</span>
 <span>MONTERREY 99/00 LOCAL MANGA LARGA</span>
 <span>$900</span>
@@ -1426,7 +1411,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY97-98LLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY97-98LLS.png">
 <span style="font-size:11px;opacity:.6">MTY97-98LLS</span>
 <span>MONTERREY 97/98 LOCAL MANGA LARGA</span>
 <span>$900</span>
@@ -1446,7 +1431,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY95-96VLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY95-96VLS.png">
 <span style="font-size:11px;opacity:.6">MTY95-96VLS</span>
 <span>MONTERREY 95/96 VISITA MANGA LARGA</span>
 <span>$900</span>
@@ -1466,7 +1451,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY95-96V.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY95-96V.png">
 <span style="font-size:11px;opacity:.6">MTY95-96V</span>
 <span>MONTERREY 95/96 VISITA</span>
 <span>$800</span>
@@ -1486,7 +1471,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00L.png">
 <span style="font-size:11px;opacity:.6">MTY99-00L</span>
 <span>MONTERREY 99/00 LOCAL</span>
 <span>$800</span>
@@ -1506,7 +1491,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY97-98L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY97-98L.png">
 <span style="font-size:11px;opacity:.6">MTY97-98L</span>
 <span>MONTERREY 97/98 LOCAL</span>
 <span>$800</span>
@@ -1526,7 +1511,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY93-94L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY93-94L.png">
 <span style="font-size:11px;opacity:.6">MTY93-94L</span>
 <span>MONTERREY 93/94 LOCAL</span>
 <span>$800</span>
@@ -1546,7 +1531,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99L.png">
 <span style="font-size:11px;opacity:.6">MTY98-99L</span>
 <span>MONTERREY 98/99 EDICION ESPECIAL</span>
 <span>$800</span>
@@ -1566,7 +1551,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY94-95L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY94-95L.png">
 <span style="font-size:11px;opacity:.6">MTY94-95L</span>
 <span>MONTERREY 94/95 LOCAL</span>
 <span>$800</span>
@@ -1586,7 +1571,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99L.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99L.png">
 <span style="font-size:11px;opacity:.6">MTY98-99L</span>
 <span>MONTERREY 98/99 LOCAL</span>
 <span>$800</span>
@@ -1606,7 +1591,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99T.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99T.png">
 <span style="font-size:11px;opacity:.6">MTY98-99T</span>
 <span>MONTERREY 98/99 TERCERA</span>
 <span>$800</span>
@@ -1626,7 +1611,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99V.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY98-99V.png">
 <span style="font-size:11px;opacity:.6">MTY98-99V</span>
 <span>MONTERREY 98/99 VISITA</span>
 <span>$800</span>
@@ -1646,7 +1631,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY95-96LLS.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY95-96LLS.png">
 <span style="font-size:11px;opacity:.6">MTY95-96LLS</span>
 <span>MONTERREY 95/96 LOCAL MANGA LARGA</span>
 <span>$900</span>
@@ -1666,7 +1651,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00T.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00T.png">
 <span style="font-size:11px;opacity:.6">MTY99-00T</span>
 <span>MONTERREY 99/00 TERCERA</span>
 <span>$800</span>
@@ -1686,7 +1671,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00V.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY99-00V.png">
 <span style="font-size:11px;opacity:.6">MTY99-00V</span>
 <span>MONTERREY 99/00 VISITA</span>
 <span>$800</span>
@@ -1706,7 +1691,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10LLS3.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10LLS3.png">
 <span style="font-size:11px;opacity:.6">MTY09-10LLS3</span>
 <span>MONTERREY 09/10 LOCAL MANGA LARGA (3 ESTRELLAS)</span>
 <span>$900</span>
@@ -1726,7 +1711,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10L3.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10L3.png">
 <span style="font-size:11px;opacity:.6">MTY09-10L3</span>
 <span>MONTERREY 09/10 LOCAL (3 ESTRELLAS)</span>
 <span>$800</span>
@@ -1746,7 +1731,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10LLS2.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10LLS2.png">
 <span style="font-size:11px;opacity:.6">MTY09-10LLS2</span>
 <span>MONTERREY 09/10 LOCAL MANGA LARGA (2 ESTRELLAS)</span>
 <span>$900</span>
@@ -1766,7 +1751,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10L2.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10L2.png">
 <span style="font-size:11px;opacity:.6">MTY09-10L2</span>
 <span>MONTERREY 09/10 LOCAL (2 ESTRELLAS)</span>
 <span>$800</span>
@@ -1786,7 +1771,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="JERSEYS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10V2.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY09-10V2.png">
 <span style="font-size:11px;opacity:.6">MTY09-10V2</span>
 <span>MONTERREY 09/10 VISITA (2 ESTRELLAS)</span>
 <span>$800</span>
@@ -1806,7 +1791,7 @@ Comprar por WhatsApp
 
 
 <div class="producto" data-categoria="CHAMARRAS">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26S.png">
+<img onclick="abrirImagen(this.src)" style="cursor:pointer;" src="MTY25-26S.png">
 <span style="font-size:11px;opacity:.6">MTY25-26S</span>
 <span>MONTERREY 25/26 SUETER</span>
 <span>$1100</span>
@@ -1830,25 +1815,9 @@ Comprar por WhatsApp
 
 </div>
 
-<div class="redes">
 
-<a class="whatsapp" href="https://wa.me/528132802304">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
 
-<a class="instagram" href="https://www.instagram.com/thehandicap.house/">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
 
-<a class="facebook" href="https://www.facebook.com/share/1BXfqRwqHg/?mibextid=wwXIfr">
-<img loading="lazy" onclick="abrirImagen(this.src)" style="cursor:pointer;" src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
-
-</div>
-
-<footer>
-© 2026 The Handicap House
-</footer>
 
 
 
@@ -2067,7 +2036,7 @@ cerrarModal();
 
 
 <div id="visorImagen" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:9999;">
-  <img loading="lazy" id="imgGrande" style="max-width:90%;max-height:90%;">
+  <img id="imgGrande" style="max-width:90%;max-height:90%;">
 </div>
 
 <script>
