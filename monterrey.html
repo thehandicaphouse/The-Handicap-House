@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Monterrey | The Handicap House</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
+
 
 html,body{
 margin:0;
@@ -374,47 +372,14 @@ text-decoration:none;
 background:#1ebe5d;
 }
 
-</style>
 
-
-<style>
-.btn-whatsapp {
-  width: 100%;
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: white;
-  border: none;
-  padding: 10px 0;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-whatsapp:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.btn-whatsapp:active {
-  transform: scale(0.98);
-}
-
-.producto {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.producto button {
-  margin-top: auto;
-}
 </style>
 
 </head>
 
 <body>
+
+<div class="fondo"></div>
 
 <div id="layout"></div>
 
@@ -422,20 +387,9 @@ background:#1ebe5d;
 fetch("layout.html")
 .then(res => res.text())
 .then(data => {
-document.getElementById("layout").innerHTML = data;
-});
-</script>
+    document.getElementById("layout").innerHTML = data;
 
-
-<div class="fondo"></div>
-
-
-
-
-
-
-
-<div class="contenedor">
+    document.getElementById("contenido").innerHTML = `<div class="contenedor">
 
 <div class="menu-lateral">
 
@@ -1809,7 +1763,11 @@ Comprar por WhatsApp
 </div>
 
 
-</div>
+</div>`;
+});
+</script>
+
+
 
 </div>
 
@@ -2049,6 +2007,10 @@ document.getElementById("visorImagen").onclick = function(){
   this.style.display="none";
 }
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
