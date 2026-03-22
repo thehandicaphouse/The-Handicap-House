@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Liga MX | The Handicap House</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
+
 
 /* ========================= */
 /* BASE */
@@ -314,11 +312,14 @@ max-width:260px;
 
 }
 
+
 </style>
 
 </head>
 
 <body>
+
+<div class="fondo"></div>
 
 <div id="layout"></div>
 
@@ -326,25 +327,11 @@ max-width:260px;
 fetch("layout.html")
 .then(res => res.text())
 .then(data => {
-document.getElementById("layout").innerHTML = data;
-});
-</script>
+    document.getElementById("layout").innerHTML = data;
 
-
-<div class="fondo"></div>
-
-<!-- CINTA -->
-
-
-
-
-
-
-
-<div class="titulo">
+    document.getElementById("contenido").innerHTML = `<div class="titulo">
 LIGA MX
 </div>
-
 <section class="equipos">
 
 <a href="monterrey.html" class="equipo">
@@ -368,11 +355,9 @@ LIGA MX
 <div class="equipo"><img src="necaxa.png"><span>Necaxa</span></div>
 <div class="equipo"><img src="puebla.png"><span>Puebla</span></div>
 
-</section>
-
-
-
-
+</section>`;
+});
+</script>
 
 </body>
 </html>
